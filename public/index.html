@@ -152,8 +152,8 @@
             <svg class="gauge-svg" viewBox="0 0 120 72">
               <defs>
                 <linearGradient id="cpu-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#0284C7"/>
-                  <stop offset="100%" stop-color="#38BDF8"/>
+                  <stop offset="0%" stop-color="#0052FF"/>
+                  <stop offset="100%" stop-color="#3D7BFF"/>
                 </linearGradient>
               </defs>
               <path class="gauge-track" d="M 15 62 A 45 45 0 0 1 105 62"/>
@@ -174,41 +174,41 @@
             <svg class="sparkline-svg" id="cpu-sparkline-svg" viewBox="0 0 200 32" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="cpu-spark-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#0284C7" stop-opacity="0.22"/>
-                  <stop offset="100%" stop-color="#0284C7" stop-opacity="0.0"/>
+                  <stop offset="0%" stop-color="#0052FF" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#0052FF" stop-opacity="0.0"/>
                 </linearGradient>
               </defs>
               <polygon id="cpu-sparkline-area" fill="url(#cpu-spark-fill)" points="0,32 200,32"/>
-              <polyline id="cpu-sparkline-line" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,32 200,32"/>
+              <polyline id="cpu-sparkline-line" fill="none" stroke="#0052FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,32 200,32"/>
             </svg>
           </div>
 
           <div class="card-subtext" id="cpu-details">2 Cores / 4 Threads • Base 2.80 GHz</div>
 
           <!-- Graphical CPU Clock & Cache Meters -->
-          <div class="cache-hierarchy" style="margin-top: 12px; padding: 10px; background: rgba(0,0,0,0.25); border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); font-size: 11px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-              <span style="color: #94a3b8; font-weight: 500;">Clock Speed</span>
-              <span id="cpu-live-clock" style="color: #38bdf8; font-weight: 600;">2803 MHz / 2904 MHz</span>
+          <div class="cache-hierarchy" style="margin-top: 12px; padding: 12px 14px; background: #F8F9FA; border-radius: 12px; border: 1px solid #E6E8EC; font-size: 11.5px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span style="color: #5B616E; font-weight: 600;">Clock Speed</span>
+              <span id="cpu-live-clock" style="color: #0052FF; font-weight: 700;">2803 MHz / 2904 MHz</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden; margin-bottom: 8px;">
-              <div id="cpu-clock-bar" style="background: linear-gradient(90deg, #0284c7, #38bdf8); width: 96%; height: 100%; transition: width 0.3s ease;"></div>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-              <span style="color: #94a3b8; font-weight: 500;">L2 Cache (~100 GB/s)</span>
-              <span id="cpu-l2-val" style="color: #a78bfa; font-weight: 600;">512 KB</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden; margin-bottom: 8px;">
-              <div id="cpu-l2-bar" style="background: linear-gradient(90deg, #8b5cf6, #a78bfa); width: 100%; height: 100%;"></div>
+            <div style="background: #EAECEF; height: 6px; border-radius: 99px; overflow: hidden; margin-bottom: 9px;">
+              <div id="cpu-clock-bar" style="background: #0052FF; width: 96%; height: 100%; transition: width 0.3s ease;"></div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-              <span style="color: #94a3b8; font-weight: 500;">L3 Smart Cache (~50 GB/s)</span>
-              <span id="cpu-l3-val" style="color: #34d399; font-weight: 600;">4096 KB (4 MB)</span>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span style="color: #5B616E; font-weight: 600;">L2 Cache (~100 GB/s)</span>
+              <span id="cpu-l2-val" style="color: #4F46E5; font-weight: 700;">512 KB</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden;">
-              <div id="cpu-l3-bar" style="background: linear-gradient(90deg, #059669, #34d399); width: 100%; height: 100%;"></div>
+            <div style="background: #EAECEF; height: 6px; border-radius: 99px; overflow: hidden; margin-bottom: 9px;">
+              <div id="cpu-l2-bar" style="background: #4F46E5; width: 100%; height: 100%;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span style="color: #5B616E; font-weight: 600;">L3 Smart Cache (~50 GB/s)</span>
+              <span id="cpu-l3-val" style="color: #098551; font-weight: 700;">4096 KB (4 MB)</span>
+            </div>
+            <div style="background: #EAECEF; height: 6px; border-radius: 99px; overflow: hidden;">
+              <div id="cpu-l3-bar" style="background: #098551; width: 100%; height: 100%;"></div>
             </div>
           </div>
         </div>
@@ -228,8 +228,8 @@
             <svg class="gauge-svg" viewBox="0 0 120 72">
               <defs>
                 <linearGradient id="ram-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#059669"/>
-                  <stop offset="100%" stop-color="#34D399"/>
+                  <stop offset="0%" stop-color="#098551"/>
+                  <stop offset="100%" stop-color="#22C55E"/>
                 </linearGradient>
               </defs>
               <path class="gauge-track" d="M 15 62 A 45 45 0 0 1 105 62"/>
@@ -250,12 +250,12 @@
             <svg class="sparkline-svg" id="ram-sparkline-svg" viewBox="0 0 200 32" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="ram-spark-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#059669" stop-opacity="0.22"/>
-                  <stop offset="100%" stop-color="#059669" stop-opacity="0.0"/>
+                  <stop offset="0%" stop-color="#098551" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#098551" stop-opacity="0.0"/>
                 </linearGradient>
               </defs>
               <polygon id="ram-sparkline-area" fill="url(#ram-spark-fill)" points="0,32 200,32"/>
-              <polyline id="ram-sparkline-line" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,32 200,32"/>
+              <polyline id="ram-sparkline-line" fill="none" stroke="#098551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,32 200,32"/>
             </svg>
           </div>
 
@@ -360,27 +360,27 @@
           <svg class="stream-svg" id="stream-chart-svg" viewBox="0 0 600 130" preserveAspectRatio="none">
             <defs>
               <linearGradient id="stream-cpu-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#0284C7" stop-opacity="0.20"/>
-                <stop offset="100%" stop-color="#0284C7" stop-opacity="0.0"/>
+                <stop offset="0%" stop-color="#0052FF" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#0052FF" stop-opacity="0.0"/>
               </linearGradient>
               <linearGradient id="stream-ram-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#059669" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#059669" stop-opacity="0.0"/>
+                <stop offset="0%" stop-color="#098551" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#098551" stop-opacity="0.0"/>
               </linearGradient>
             </defs>
 
             <!-- Horizontal guideline ticks -->
-            <line x1="0" y1="32" x2="600" y2="32" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
-            <line x1="0" y1="65" x2="600" y2="65" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
-            <line x1="0" y1="98" x2="600" y2="98" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
+            <line x1="0" y1="32" x2="600" y2="32" stroke="#E6E8EC" stroke-dasharray="3 3"/>
+            <line x1="0" y1="65" x2="600" y2="65" stroke="#E6E8EC" stroke-dasharray="3 3"/>
+            <line x1="0" y1="98" x2="600" y2="98" stroke="#E6E8EC" stroke-dasharray="3 3"/>
 
             <!-- RAM Stream Curve (Clean Emerald) -->
             <polygon id="stream-ram-area" fill="url(#stream-ram-fill)" points="0,130 600,130"/>
-            <path id="stream-ram-line" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 0 130 L 600 130"/>
+            <path id="stream-ram-line" fill="none" stroke="#098551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 0 130 L 600 130"/>
 
-            <!-- CPU Stream Curve (Sky Blue) -->
+            <!-- CPU Stream Curve (Coinbase Blue) -->
             <polygon id="stream-cpu-area" fill="url(#stream-cpu-fill)" points="0,130 600,130"/>
-            <path id="stream-cpu-line" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 0 130 L 600 130"/>
+            <path id="stream-cpu-line" fill="none" stroke="#0052FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 0 130 L 600 130"/>
           </svg>
         </div>
       </div>
