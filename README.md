@@ -40,7 +40,7 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/muhammadibraheemkaboh/Apex-Windows-Optimizer.git
+   git clone https://github.com/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer.git
    cd Apex-Windows-Optimizer
    ```
 
@@ -80,7 +80,7 @@
 
 ## 👨‍💻 Author & Contributions
 
-Created with passion by **Muhammad Ibrahim (Abdaal)** ([@muhammadibraheemkaboh](https://github.com/muhammadibraheemkaboh)).
+Created with passion by **Muhammad Ibrahim (Abdaal)** ([@Muhammad-Ibraheem-kamboh](https://github.com/Muhammad-Ibraheem-kamboh)).
 
 Contributions, issues, and feature requests are welcome! If this project helps speed up your machine, please give it a **⭐ Star on GitHub**!
 
