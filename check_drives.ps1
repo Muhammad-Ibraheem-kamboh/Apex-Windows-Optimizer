@@ -1,1 +1,0 @@
-Get-PSDrive -PSProvider FileSystem | Select-Object Name, @{N='TotalGB';E={[math]::Round(($_.Used + $_.Free)/1GB, 1)}}, @{N='FreeGB';E={[math]::Round($_.Free/1GB, 1)}}, @{N='UsedGB';E={[math]::Round($_.Used/1GB, 1)}} | Format-Table -AutoSize

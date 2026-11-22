@@ -143,7 +143,7 @@ const I18N = {
 
     // Power Tab
     pwr_title: "Hardware Performance Profiles",
-    pwr_what: "Adjusts Intel Core i7-7600U clock throttling and cooling fan behavior.",
+    pwr_what: "Adjusts CPU processor clock throttling and cooling fan behavior for optimal performance.",
     pwr_why: "Choose High Performance for speed, or Balanced/Saver to keep your laptop cool and quiet.",
     btn_pwr_high: "⚡ High Performance (Full Clock Speed)",
     btn_pwr_balanced: "⚖️ Balanced (Intelligent Clock Scaling)",
