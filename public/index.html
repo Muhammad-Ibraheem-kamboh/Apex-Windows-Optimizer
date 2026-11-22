@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Windows Optimizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Noto+Sans+Arabic:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Mac-style Window Controls (Image 1 & 2 Style) -->
+    <div class="window-dots">
+      <span class="dot dot-red" title="Close"></span>
+      <span class="dot dot-yellow" title="Minimize"></span>
+      <span class="dot dot-green" title="Maximize"></span>
+    </div>
+
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>APEX PRO</h1>
+        <p id="brand-sub">Windows Optimizer</p>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-item active" data-tab="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </div>
+
+      <div class="nav-item" data-tab="memory">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span data-i18n="nav_memory">Memory Engine</span>
+      </div>
+
+      <div class="nav-item" data-tab="storage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>
+        <span data-i18n="nav_storage">Storage Vault</span>
+      </div>
+
+      <div class="nav-item" data-tab="network">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span data-i18n="nav_network">Network & Ping</span>
+      </div>
+
+      <div class="nav-item" data-tab="gaming">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 18 3 21 17 3 17 6 3"/><line x1="10" y1="9" x2="14" y2="9"/><line x1="12" y1="7" x2="12" y2="11"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg>
+        <span data-i18n="nav_gaming">Game Booster</span>
+      </div>
+
+      <div class="nav-item" data-tab="tweaks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span data-i18n="nav_tweaks">System Tweaks</span>
+      </div>
+
+      <div class="nav-item" data-tab="power">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
+        <span data-i18n="nav_power">Power & Battery</span>
+      </div>
+
+      <div class="nav-item" data-tab="autopilot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+        <span data-i18n="nav_autopilot">Auto-Pilot</span>
+      </div>
+
+      <div class="nav-item" data-tab="utilities">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span data-i18n="nav_utilities">Desktop Utilities</span>
+      </div>
+    </nav>
+
+    <div class="engine-status-pill">
+      <div class="status-dot"></div>
+      <div class="status-info">
+        <span class="status-title" data-i18n="guard_active">System Guard Active</span>
+        <span class="status-desc" data-i18n="guard_desc">Auto-RAM & Storage Shield</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="page-header">
+        <h2 id="page-title">System Dashboard</h2>
+        <p id="page-subtitle">Real-time hardware telemetry and background maintenance</p>
+      </div>
+
+      <div class="quick-actions-bar">
+        <!-- Language Switcher -->
+        <button class="btn btn-lang" id="btn-lang-toggle">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="lang-btn-text">اردو (Urdu)</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-refresh">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          <span data-i18n="btn_refresh">Refresh</span>
+        </button>
+
+        <button class="btn btn-primary" id="btn-quick-flush">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span data-i18n="btn_quick_flush">Quick Flush RAM</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ======================================================== -->
+    <!-- TAB 1: DASHBOARD -->
+    <!-- ======================================================== -->
+    <section class="tab-content active" id="tab-dashboard">
+      <!-- Master Hyper Boost Hero -->
+      <div class="hero-boost-card">
+        <div class="hero-left">
+          <h3 data-i18n="hyper_title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Master Hyper-Boost Mode
+          </h3>
+          <p data-i18n="hyper_desc">Instantly cleans up trapped RAM, stops background bloat apps, and gives your PC maximum speed in 1 second.</p>
+        </div>
+        <button class="btn btn-hyper" id="btn-master-boost" data-i18n="btn_hyper">
+          ⚡ ENGAGE HYPER BOOST
+        </button>
+      </div>
+
+      <!-- 4 Core Metric Cards (Speedometer Gauges + Live Sparklines) -->
+      <div class="grid-2">
+        <!-- CPU Card -->
+        <div class="card metric-card">
+          <div class="card-header">
+            <span class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+              <span data-i18n="card_cpu_title">Processor (CPU)</span>
+            </span>
+            <span class="badge" id="cpu-name">Intel Core i7-7600U</span>
+          </div>
+
+          <!-- Speedometer Arc Gauge -->
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 72">
+              <defs>
+                <linearGradient id="cpu-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0284C7"/>
+                  <stop offset="100%" stop-color="#38BDF8"/>
+                </linearGradient>
+              </defs>
+              <path class="gauge-track" d="M 15 62 A 45 45 0 0 1 105 62"/>
+              <path class="gauge-indicator" id="cpu-gauge-arc" stroke="url(#cpu-gauge-grad)" d="M 15 62 A 45 45 0 0 1 105 62"/>
+            </svg>
+            <div class="gauge-readout">
+              <span class="gauge-number" id="cpu-load">0%</span>
+              <span class="gauge-sublabel">LOAD</span>
+            </div>
+          </div>
+          <div class="gauge-scale">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+
+          <!-- Mini Sparkline Wave -->
+          <div class="sparkline-wrapper">
+            <svg class="sparkline-svg" id="cpu-sparkline-svg" viewBox="0 0 200 32" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="cpu-spark-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0284C7" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#0284C7" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <polygon id="cpu-sparkline-area" fill="url(#cpu-spark-fill)" points="0,32 200,32"/>
+              <polyline id="cpu-sparkline-line" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,32 200,32"/>
+            </svg>
+          </div>
+
+          <div class="card-subtext" id="cpu-details">2 Cores / 4 Threads • Base 2.80 GHz</div>
+
+          <!-- Graphical CPU Clock & Cache Meters -->
+          <div class="cache-hierarchy" style="margin-top: 12px; padding: 10px; background: rgba(0,0,0,0.25); border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); font-size: 11px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+              <span style="color: #94a3b8; font-weight: 500;">Clock Speed</span>
+              <span id="cpu-live-clock" style="color: #38bdf8; font-weight: 600;">2803 MHz / 2904 MHz</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden; margin-bottom: 8px;">
+              <div id="cpu-clock-bar" style="background: linear-gradient(90deg, #0284c7, #38bdf8); width: 96%; height: 100%; transition: width 0.3s ease;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+              <span style="color: #94a3b8; font-weight: 500;">L2 Cache (~100 GB/s)</span>
+              <span id="cpu-l2-val" style="color: #a78bfa; font-weight: 600;">512 KB</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden; margin-bottom: 8px;">
+              <div id="cpu-l2-bar" style="background: linear-gradient(90deg, #8b5cf6, #a78bfa); width: 100%; height: 100%;"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+              <span style="color: #94a3b8; font-weight: 500;">L3 Smart Cache (~50 GB/s)</span>
+              <span id="cpu-l3-val" style="color: #34d399; font-weight: 600;">4096 KB (4 MB)</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden;">
+              <div id="cpu-l3-bar" style="background: linear-gradient(90deg, #059669, #34d399); width: 100%; height: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAM Card -->
+        <div class="card metric-card">
+          <div class="card-header">
+            <span class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span data-i18n="card_ram_title">Physical Memory (RAM)</span>
+            </span>
+            <span class="badge" id="ram-used-mb">0 / 0 MB</span>
+          </div>
+
+          <!-- Speedometer Arc Gauge -->
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 72">
+              <defs>
+                <linearGradient id="ram-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#059669"/>
+                  <stop offset="100%" stop-color="#34D399"/>
+                </linearGradient>
+              </defs>
+              <path class="gauge-track" d="M 15 62 A 45 45 0 0 1 105 62"/>
+              <path class="gauge-indicator" id="ram-gauge-arc" stroke="url(#ram-gauge-grad)" d="M 15 62 A 45 45 0 0 1 105 62"/>
+            </svg>
+            <div class="gauge-readout">
+              <span class="gauge-number" id="ram-percent">0%</span>
+              <span class="gauge-sublabel">USED</span>
+            </div>
+          </div>
+          <div class="gauge-scale">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+
+          <!-- Mini Sparkline Wave -->
+          <div class="sparkline-wrapper">
+            <svg class="sparkline-svg" id="ram-sparkline-svg" viewBox="0 0 200 32" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="ram-spark-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#059669" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#059669" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <polygon id="ram-sparkline-area" fill="url(#ram-spark-fill)" points="0,32 200,32"/>
+              <polyline id="ram-sparkline-line" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,32 200,32"/>
+            </svg>
+          </div>
+
+          <div class="card-subtext" id="ram-free-subtext">Free Memory: Calculating...</div>
+        </div>
+
+        <!-- Disk Card -->
+        <div class="card metric-card">
+          <div class="card-header">
+            <span class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+              <span data-i18n="card_disk_title">Primary Drive (C:)</span>
+            </span>
+            <span class="badge" id="disk-free-gb">0 GB Free</span>
+          </div>
+
+          <!-- Speedometer Arc Gauge -->
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 72">
+              <defs>
+                <linearGradient id="disk-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0F766E"/>
+                  <stop offset="100%" stop-color="#14B8A6"/>
+                </linearGradient>
+              </defs>
+              <path class="gauge-track" d="M 15 62 A 45 45 0 0 1 105 62"/>
+              <path class="gauge-indicator" id="disk-gauge-arc" stroke="url(#disk-gauge-grad)" d="M 15 62 A 45 45 0 0 1 105 62"/>
+            </svg>
+            <div class="gauge-readout">
+              <span class="gauge-number" id="disk-percent">0%</span>
+              <span class="gauge-sublabel">SPACE</span>
+            </div>
+          </div>
+          <div class="gauge-scale">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+
+          <div class="progress-container" style="margin-top: 10px;">
+            <div class="progress-bar" id="disk-bar" style="width: 0%; background: linear-gradient(90deg, #0F766E, #14B8A6);"></div>
+          </div>
+          <div class="card-subtext" id="disk-details">SSD Volume • NTFS File System</div>
+        </div>
+
+        <!-- Battery Card -->
+        <div class="card metric-card">
+          <div class="card-header">
+            <span class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
+              <span data-i18n="card_battery_title">Battery & Power</span>
+            </span>
+            <span class="badge" id="battery-status">AC Power</span>
+          </div>
+
+          <!-- Speedometer Arc Gauge -->
+          <div class="gauge-container">
+            <svg class="gauge-svg" viewBox="0 0 120 72">
+              <defs>
+                <linearGradient id="battery-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#D97706"/>
+                  <stop offset="100%" stop-color="#FBBF24"/>
+                </linearGradient>
+              </defs>
+              <path class="gauge-track" d="M 15 62 A 45 45 0 0 1 105 62"/>
+              <path class="gauge-indicator" id="battery-gauge-arc" stroke="url(#battery-gauge-grad)" d="M 15 62 A 45 45 0 0 1 105 62"/>
+            </svg>
+            <div class="gauge-readout">
+              <span class="gauge-number" id="battery-percent">0%</span>
+              <span class="gauge-sublabel">POWER</span>
+            </div>
+          </div>
+          <div class="gauge-scale">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+
+          <div class="progress-container" style="margin-top: 10px;">
+            <div class="progress-bar" id="battery-bar" style="width: 0%; background: linear-gradient(90deg, #D97706, #FBBF24);"></div>
+          </div>
+          <div class="card-subtext" id="battery-health-subtext">Safe Swell Guard: Active (85% Limit Alert)</div>
+        </div>
+      </div>
+
+      <!-- Live Performance Telemetry Stream Card (Image 3 Style) -->
+      <div class="card telemetry-stream-card">
+        <div class="card-header">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span>Live Performance Telemetry Stream</span>
+            </span>
+            <span class="pulse-live-badge"><span class="live-dot"></span> LIVE METRICS</span>
+          </div>
+          <div class="telemetry-legend">
+            <span class="legend-item"><span class="legend-dot" style="background: #38BDF8;"></span> CPU: <strong id="legend-cpu-val" style="color:#38BDF8">0%</strong></span>
+            <span class="legend-item"><span class="legend-dot" style="background: #34D399;"></span> RAM: <strong id="legend-ram-val" style="color:#34D399">0%</strong></span>
+            <span class="legend-item"><span class="legend-dot" style="background: #94A3B8;"></span> Tasks: <strong id="legend-tasks-val" style="color:#F8FAFC">0</strong></span>
+          </div>
+        </div>
+
+        <div class="stream-chart-wrapper">
+          <svg class="stream-svg" id="stream-chart-svg" viewBox="0 0 600 130" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="stream-cpu-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0284C7" stop-opacity="0.20"/>
+                <stop offset="100%" stop-color="#0284C7" stop-opacity="0.0"/>
+              </linearGradient>
+              <linearGradient id="stream-ram-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#059669" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#059669" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Horizontal guideline ticks -->
+            <line x1="0" y1="32" x2="600" y2="32" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
+            <line x1="0" y1="65" x2="600" y2="65" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
+            <line x1="0" y1="98" x2="600" y2="98" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
+
+            <!-- RAM Stream Curve (Clean Emerald) -->
+            <polygon id="stream-ram-area" fill="url(#stream-ram-fill)" points="0,130 600,130"/>
+            <path id="stream-ram-line" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 0 130 L 600 130"/>
+
+            <!-- CPU Stream Curve (Sky Blue) -->
+            <polygon id="stream-cpu-area" fill="url(#stream-cpu-fill)" points="0,130 600,130"/>
+            <path id="stream-cpu-line" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 0 130 L 600 130"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 2: MEMORY ENGINE -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-memory">
+      <!-- Deep RAM Trimmer -->
+      <div class="card" style="margin-bottom: 18px;">
+        <div class="card-header">
+          <span class="card-title" data-i18n="mem_trimmer_title">Working-Set Memory Flush</span>
+          <span class="badge" style="background: rgba(99,102,241,0.15); color: #818CF8;" data-i18n="tag_safe">100% Safe</span>
+        </div>
+        
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="mem_trimmer_what">Frees up unused memory trapped by background apps without closing any of your open windows.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="mem_trimmer_why">Instantly frees 1 to 2 GB of RAM to speed up lagging programs and games.</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-deep-ram-flush">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span data-i18n="btn_deep_ram">Flush RAM Across All Processes</span>
+        </button>
+      </div>
+
+      <!-- Bloat Terminator -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" data-i18n="mem_bloat_title">Background Bloat Terminator</span>
+          <span class="badge" style="background: rgba(239,68,68,0.15); color: #F87171;" data-i18n="tag_power">Power Saver</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="mem_bloat_what">Stops hidden background tasks (Phone Link, Bing Wallpaper, CrossDevice, Copilot hub).</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="mem_bloat_why">Saves ~300 to 500 MB RAM and prevents CPU wakeups to make your laptop run cooler.</span>
+          </div>
+        </div>
+
+        <button class="btn btn-danger" id="btn-kill-bloat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <span data-i18n="btn_kill_bloat">Terminate Background Bloat</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 3: STORAGE VAULT -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-storage">
+      <div class="grid-2" style="margin-bottom: 18px;">
+        <!-- Cleanable Junk Scanner -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="stor_junk_title">Cleanable Junk Purger</span>
+            <button class="btn btn-secondary" style="padding: 4px 10px;" id="btn-scan-storage" data-i18n="btn_scan">Scan</button>
+          </div>
+          <div class="card-value" id="cleanable-total">-- MB</div>
+          <div class="card-subtext" id="cleanable-details">Click Scan to check temporary files</div>
+
+          <div class="feature-brief" style="margin-top: 14px;">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="stor_junk_what">Clears old Windows Update cache, temp files, and error crash dumps.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="stor_junk_why">Reclaims gigabytes of free space on Drive C: without touching your personal files.</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%;" id="btn-purge-storage" data-i18n="btn_purge">
+            Purge System Junk
+          </button>
+        </div>
+
+        <!-- SSD ReTrim -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="stor_trim_title">Solid State Drive (SSD) ReTrim</span>
+            <span class="badge" style="background: rgba(6,182,212,0.15); color: #22D3EE;" data-i18n="tag_ssd">Hardware TRIM</span>
+          </div>
+          <div class="card-value" style="font-size: 20px; color: var(--cyan);">NAND Refresh</div>
+          <div class="card-subtext" data-i18n="stor_trim_sub">Wear-leveling optimization for SSD</div>
+
+          <div class="feature-brief" style="margin-top: 14px;">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="stor_trim_what">Sends native TRIM commands to the SSD controller to wipe dirty erased blocks.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="stor_trim_why">Maintains maximum read/write file speeds and extends SSD hardware lifespan.</span>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary" style="width: 100%;" id="btn-trim-ssd" data-i18n="btn_trim">
+            Run SSD ReTrim
+          </button>
+        </div>
+      </div>
+
+      <!-- Hibernation Footprint Sizing -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" data-i18n="stor_hiber_title">Hibernation Storage Management (hiberfil.sys)</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="stor_hiber_what">Windows reserves 8 GB storage for hibernation matching your RAM. Reduced mode keeps Fast Startup.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="stor_hiber_why">Saves 4 GB to 8 GB of internal SSD space instantly with 1 click.</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn btn-secondary" id="btn-hiber-reduced" data-i18n="btn_hiber_reduced">Reduced Mode (Save 4GB)</button>
+          <button class="btn btn-danger" id="btn-hiber-off" data-i18n="btn_hiber_off">Disable (Save 8GB)</button>
+          <button class="btn btn-secondary" id="btn-hiber-full" data-i18n="btn_hiber_full">Standard Full Mode</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 4: NETWORK & PING (NEW!) -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-network">
+      <div class="card" style="margin-bottom: 18px;">
+        <div class="card-header">
+          <span class="card-title" data-i18n="net_title">DNS & Network Latency Purge</span>
+          <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399;" data-i18n="tag_fast_net">Low Latency</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="net_what">Flushes corrupted DNS domain cache and resets Windows network socket routing.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="net_why">Fixes website loading hang-ups, reduces ping spikes in games, and refreshes connection speed.</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-flush-dns">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span data-i18n="btn_flush_dns">Flush DNS & Reset Network Cache</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 5: GAME BOOSTER (NEW!) -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-gaming">
+      <div class="card" style="margin-bottom: 18px;">
+        <div class="card-header">
+          <span class="card-title" data-i18n="game_title">Ultra Gaming Boost Mode</span>
+          <span class="badge" style="background: rgba(245,158,11,0.15); color: #FBBF24;" data-i18n="tag_max_fps">Max FPS</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="game_what">Frees RAM, halts print spooler and telemetry services, and sets High Performance power plan.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="game_why">Stops micro-stuttering, stabilizes frame rates, and directs all CPU threads to your game.</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-hyper" id="btn-game-boost" data-i18n="btn_engage_game">
+            🎮 ENGAGE GAME BOOST
+          </button>
+          <button class="btn btn-secondary" id="btn-standard-mode" data-i18n="btn_restore_std">
+            Restore Normal Desktop Mode
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB: SYSTEM TWEAKS (REVERSE ENGINEERED!) -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-tweaks">
+      <!-- Snappiness & Menu Delay -->
+      <div class="card" style="margin-bottom: 18px;">
+        <div class="card-header">
+          <span class="card-title" data-i18n="tweak_snap_title">Instant UI Responsiveness (Zero Menu Delay)</span>
+          <span class="badge" style="background: rgba(99,102,241,0.15); color: #818CF8;" data-i18n="tag_instant">Zero Latency</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="tweak_snap_what">Reduces Windows hardcoded menu delay from 400ms down to 20ms and disables animation transition lag.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="tweak_snap_why">Right-click context menus, taskbar popups, and app windows snap open with instant tactile speed.</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-tweak-snappiness" data-i18n="btn_tweak_snap">
+          ⚡ Engage Instant UI Snappiness
+        </button>
+      </div>
+
+      <div class="grid-2">
+        <!-- TCP Network Tuning -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="tweak_tcp_title">TCP Network Stack Tuning</span>
+            <span class="badge" style="background: rgba(6,182,212,0.15); color: #22D3EE;">TCP Level</span>
+          </div>
+
+          <div class="feature-brief">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="tweak_tcp_what">Disables legacy heuristics and optimizes TCP window auto-tuning.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="tweak_tcp_why">Reduces ping jitter in games and speeds up web download handshakes.</span>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary" style="width: 100%;" id="btn-tweak-tcp" data-i18n="btn_tweak_tcp">
+            Optimize TCP Network Stack
+          </button>
+        </div>
+
+        <!-- GPU Transparency Toggle -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="tweak_trans_title">GPU VRAM Transparency Saver</span>
+            <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399;">Intel HD 620</span>
+          </div>
+
+          <div class="feature-brief">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="tweak_trans_what">Toggles DWM acrylic blur transparency on taskbar and windows.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="tweak_trans_why">Saves ~150 MB of GPU video memory and stops integrated GPU thermal throttling.</span>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary" style="width: 100%;" id="btn-tweak-transparency" data-i18n="btn_tweak_trans">
+            Toggle Transparency Mode
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 6: POWER & BATTERY -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-power">
+      <div class="grid-2" style="margin-bottom: 18px;">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="pwr_title">Hardware Performance Profiles</span>
+          </div>
+
+          <div class="feature-brief">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="pwr_what">Adjusts Intel Core i7-7600U clock throttling and cooling fan behavior.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="pwr_why">Choose High Performance for speed, or Balanced/Saver to keep your laptop cool and quiet.</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="btn btn-secondary" id="btn-plan-high" data-i18n="btn_pwr_high">⚡ High Performance (Full Clock Speed)</button>
+            <button class="btn btn-primary" id="btn-plan-balanced" data-i18n="btn_pwr_balanced">⚖️ Balanced (Intelligent Clock Scaling)</button>
+            <button class="btn btn-secondary" id="btn-plan-saver" data-i18n="btn_pwr_saver">🔋 Power Saver (Cool & Quiet)</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="bat_title">Battery Swell Prevention (85% Safe Cap)</span>
+          </div>
+
+          <div class="feature-brief">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="bat_what">Warns you with an audible desktop notification when your battery charges to 85%.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="bat_why">Stops lithium pouch cell gas buildup so your battery never expands, swells, or degrades.</span>
+            </div>
+          </div>
+
+          <div class="badge" style="display: inline-block; padding: 6px 12px; background: var(--success-bg); color: var(--success); font-weight: 700;" data-i18n="tag_swell_active">
+            Safe Swell Guard Active
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 7: AUTO-PILOT RULES -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-autopilot">
+      <div class="card" style="margin-bottom: 18px;">
+        <div class="card-header">
+          <span class="card-title" data-i18n="auto_title">Autonomous Background Rules</span>
+          <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399;" data-i18n="tag_active_watchdog">Watchdog 30s</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="auto_what">Runs silently in background to automatically clean RAM and storage whenever needed.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="auto_why">Zero manual work. Your laptop stays fast 24/7 without opening this app constantly.</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 14px;">
+          <!-- Auto RAM Toggle -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 13px; font-weight: 700;" data-i18n="auto_ram_title">Auto-Flush RAM at High Load</div>
+              <div style="font-size: 11px; color: var(--text-muted);" data-i18n="auto_ram_sub">Trims inactive memory automatically when usage crosses threshold</div>
+              <div class="slider-container">
+                <input type="range" min="60" max="90" value="75" class="range-slider" id="slider-ram-thresh">
+                <span class="slider-val" id="val-ram-thresh">75%</span>
+              </div>
+            </div>
+            <input type="checkbox" id="check-auto-ram" checked style="width: 18px; height: 18px; accent-color: var(--primary);">
+          </div>
+
+          <!-- Auto Storage Toggle -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px;">
+            <div>
+              <div style="font-size: 13px; font-weight: 700;" data-i18n="auto_stor_title">Automated Temp Junk Sweeper</div>
+              <div style="font-size: 11px; color: var(--text-muted);" data-i18n="auto_stor_sub">Cleans expired temporary files and update cache every 6 hours</div>
+            </div>
+            <input type="checkbox" id="check-auto-storage" checked style="width: 18px; height: 18px; accent-color: var(--primary);">
+          </div>
+
+          <!-- Battery Alarm Toggle -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px;">
+            <div>
+              <div style="font-size: 13px; font-weight: 700;" data-i18n="auto_bat_title">85% Battery Safe Cap Alert</div>
+              <div style="font-size: 11px; color: var(--text-muted);" data-i18n="auto_bat_sub">Notifies when battery charges to safe ceiling to prevent cell swelling</div>
+            </div>
+            <input type="checkbox" id="check-auto-battery" checked style="width: 18px; height: 18px; accent-color: var(--primary);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Engine Activity Logs -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" data-i18n="logs_title">Engine Activity Logs</span>
+          <button class="btn btn-secondary" style="padding: 4px 10px;" id="btn-refresh-logs" data-i18n="btn_refresh">Refresh</button>
+        </div>
+        <div class="log-box" id="log-container">
+          <div class="log-entry">[Ready] Apex Background Watchdog active...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 8: CUSTOM DESKTOP UTILITIES (NEW!) -->
+    <!-- ======================================================== -->
+    <section class="tab-content" id="tab-utilities">
+      <div class="grid-2" style="margin-bottom: 18px;">
+        <!-- Card 1: One-Click Critical Backup -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="util_backup_title">One-Click Critical Backup</span>
+            <span class="badge" style="background: rgba(59,130,246,0.15); color: #60A5FA;">1-Click Protect</span>
+          </div>
+
+          <div class="feature-brief">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="util_backup_what">Safely archives your Desktop, Documents, Code projects, and Chrome Bookmarks to a timestamped backup folder.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="util_backup_why">Guarantees you never lose valuable work, source code, or browser settings if something goes wrong.</span>
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">
+              <span>Backup Target:</span>
+              <span style="color: var(--accent); font-weight: 600;" id="backup-target-hint">D:\ApexBackups (or C:\)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted);">
+              <span>Status:</span>
+              <span style="color: #34D399;" id="backup-status-text">Ready to snapshot</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="btn-run-backup" style="width: 100%;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span data-i18n="btn_start_backup">💾 Run One-Click Backup</span>
+          </button>
+        </div>
+
+        <!-- Card 2: Deep Cache & Junk Purge -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title" data-i18n="util_clean_title">Deep Cache & Junk Purger</span>
+            <span class="badge" style="background: rgba(239,68,68,0.15); color: #F87171;">Full Flush</span>
+          </div>
+
+          <div class="feature-brief">
+            <div class="brief-row">
+              <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+              <span class="brief-text" data-i18n="util_clean_what">Wipes hidden Windows Temp, Prefetch, Windows Update download cache, Thumbnail DB, and browser temporary caches.</span>
+            </div>
+            <div class="brief-row">
+              <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+              <span class="brief-text" data-i18n="util_clean_why">Reclaims gigabytes of trapped disk space and eliminates mysterious system slowdowns and browser lags.</span>
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">
+              <span>Targets:</span>
+              <span style="color: var(--text-main);">Temp, Prefetch, SoftwareDistribution, DNS</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted);">
+              <span>Last Purge:</span>
+              <span style="color: #60A5FA;" id="cache-last-cleaned">Not run yet</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="btn-run-deep-clean" style="width: 100%; background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+            <span data-i18n="btn_start_clean">🧹 Deep Purge All Caches</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Developer Environment One-Click Setup -->
+      <div class="card" style="margin-bottom: 18px;">
+        <div class="card-header">
+          <span class="card-title" data-i18n="util_dev_title">Developer Environment One-Click Setup</span>
+          <button class="btn btn-secondary" style="padding: 4px 10px;" id="btn-check-dev-env">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Scan Dev Tools
+          </button>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="util_dev_what">Checks Git, Node.js, Python, and unlocks PowerShell script execution policies and developer symlink permissions.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="util_dev_why">Sets up your laptop as an optimized coding workstation in seconds without confusing manual setups.</span>
+          </div>
+        </div>
+
+        <!-- Dev Tools Status Grid -->
+        <div id="dev-tools-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 16px;">
+          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-weight: 600; font-size: 13px;">Git Version Control</div>
+            <div style="font-size: 12px; color: #34D399;" id="dev-git-status">Checking...</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-weight: 600; font-size: 13px;">Node.js Runtime</div>
+            <div style="font-size: 12px; color: #34D399;" id="dev-node-status">Checking...</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-weight: 600; font-size: 13px;">Python Environment</div>
+            <div style="font-size: 12px; color: var(--text-muted);" id="dev-python-status">Checking...</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-weight: 600; font-size: 13px;">PowerShell Policy</div>
+            <div style="font-size: 12px; color: #FBBF24;" id="dev-ps-status">Checking...</div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-run-dev-setup" style="width: 100%; background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span data-i18n="btn_start_dev">🚀 Setup Developer Environment</span>
+        </button>
+      </div>
+
+      <!-- Card 4: Quick Rescue Utilities -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" data-i18n="util_rescue_title">Desktop & Network Rescue Tools</span>
+          <span class="badge" style="background: rgba(168,85,247,0.15); color: #C084FC;">Instant Rescue</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="util_rescue_what">Instant recovery tools for stuck Windows Explorer shells, frozen taskbars, and dropped network connections.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="util_rescue_why">Fixes UI freezes and restores internet access without needing to reboot your computer.</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <button class="btn btn-secondary" id="btn-run-restart-explorer" style="padding: 12px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <span data-i18n="btn_restart_exp">🔄 Restart Windows Explorer</span>
+          </button>
+          <button class="btn btn-secondary" id="btn-run-reset-network" style="padding: 12px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span data-i18n="btn_reset_net">🌐 Reset Network & DNS</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-message">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toast-text">System Action Successful</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

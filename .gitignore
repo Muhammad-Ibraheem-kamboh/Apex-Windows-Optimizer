@@ -1,0 +1,23 @@
+# Git Ignore for Apex Windows Optimizer
+
+# Temporary and local browser caches
+chrome-temp/
+temp-profile/
+*.tmp
+*.bak
+
+# Node & package manager artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment and secrets
+.env
+.env.local
+*.log
+
+# OS-specific
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
