@@ -10,6 +10,18 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer/releases">
+    <img src="https://img.shields.io/github/v/release/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer?color=0052FF&label=Release&style=flat-square" alt="Release"/>
+  </a>
+  <img src="https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Platform"/>
+  <img src="https://img.shields.io/badge/Dependencies-0%20Zero-098551?style=flat-square" alt="Zero Dependencies"/>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer?style=flat-square&color=0052FF" alt="License"/>
+  </a>
+  <img src="https://img.shields.io/github/stars/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer?style=flat-square&color=F59E0B" alt="Stars"/>
+</p>
+
+<p align="center">
   <a href="#-key-features">Key Features</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-why-apex-optimizer">Why Apex?</a> •

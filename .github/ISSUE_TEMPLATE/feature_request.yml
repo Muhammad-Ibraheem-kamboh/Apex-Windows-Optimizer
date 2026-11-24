@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest an idea or new system optimizer capability
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Have an idea for Apex Optimizer? Let us know!
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Describe what capability you want to see.
+    validations:
+      required: true
+  - type: textarea
+    id: benefits
+    attributes:
+      label: How does this benefit Windows performance?
+      description: Explain the performance or UX improvement.
+    validations:
+      required: true
