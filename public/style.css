@@ -1,5 +1,63 @@
 :root {
-  /* 21st.dev / Linear Agency-Grade Dark Theme Palette */
+  /* Coinbase iOS Clean Surface Palette (DEFAULT: LIGHT MODE) */
+  --bg-dark: #F7F8FA;              /* App main canvas background */
+  --bg-card: #FFFFFF;              /* Card & panel surfaces */
+  --bg-card-hover: #F2F4F7;        /* Hover states */
+  --bg-sidebar: #FFFFFF;           /* Sidebar surface */
+  --border-color: #E6E8EC;         /* Hairline dividers */
+  --border-subtle: #F0F2F5;
+  --border-glow: rgba(0, 82, 255, 0.15);
+
+  /* Coinbase Brand Colors */
+  --primary: #0052FF;              /* Signature Coinbase Electric Blue */
+  --primary-hover: #0045D8;
+  --primary-glow: rgba(0, 82, 255, 0.20);
+  --primary-subtle: #EBF2FF;        /* 10% soft blue tint for badges/pills */
+  --cyan: #0052FF;
+
+  /* Semantic Feedback */
+  --success: #098551;              /* Coinbase Fintech Forest Green */
+  --success-bg: #E8F7F0;
+  --warning: #F59E0B;
+  --danger: #DF1B41;              /* Modern Fintech Crimson */
+  --danger-bg: #FEE8EC;
+
+  /* High-Contrast Humanized Typography */
+  --text-main: #0A0B0D;            /* Deep Obsidian Black */
+  --text-muted: #5B616E;           /* Steel Gray labels */
+  --text-subtle: #8A919E;          /* Muted Secondary */
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Consolas, monospace;
+
+  /* Modern Pill & Soft Corner Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Component Context Tokens */
+  --hero-card-bg: #FFFFFF;
+  --hero-card-border: var(--border-color);
+  --hero-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --btn-sec-bg: #F4F5F7;
+  --btn-sec-border: var(--border-color);
+  --btn-sec-hover: #ECEEF2;
+  --gauge-track: #ECEEF2;
+  --progress-track: #ECEEF2;
+  --spark-bg: #F7F8FA;
+  --stream-bg: #F7F8FA;
+  --log-bg: #F7F8FA;
+  --brief-bg: #F8F9FA;
+  --sub-block-bg: #F8F9FA;
+  --badge-bg: #F4F5F7;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+  --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] {
+  /* 21st.dev / Linear Agency-Grade Obsidian Palette (DARK MODE) */
   --bg-dark: #090B10;              /* Main obsidian canvas background */
   --bg-card: #111520;              /* Card & panel surfaces */
   --bg-card-hover: #171E2E;        /* Hover states */
@@ -27,15 +85,23 @@
   --text-muted: #94A3B8;           /* Slate Gray labels */
   --text-subtle: #64748B;          /* Muted Secondary */
 
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", sans-serif;
-  --font-mono: "SF Mono", "JetBrains Mono", Consolas, monospace;
-
-  /* Modern Pill & Soft Corner Radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
-  --radius-pill: 9999px;
+  /* Component Context Tokens */
+  --hero-card-bg: linear-gradient(135deg, #151A28 0%, #0F131E 100%);
+  --hero-card-border: rgba(0, 102, 255, 0.35);
+  --hero-card-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --btn-sec-bg: rgba(255, 255, 255, 0.06);
+  --btn-sec-border: var(--border-color);
+  --btn-sec-hover: rgba(255, 255, 255, 0.12);
+  --gauge-track: rgba(255, 255, 255, 0.1);
+  --progress-track: rgba(255, 255, 255, 0.08);
+  --spark-bg: rgba(0, 0, 0, 0.25);
+  --stream-bg: rgba(0, 0, 0, 0.3);
+  --log-bg: #07090F;
+  --brief-bg: rgba(255, 255, 255, 0.03);
+  --sub-block-bg: rgba(255, 255, 255, 0.03);
+  --badge-bg: rgba(255, 255, 255, 0.06);
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -54,6 +120,7 @@ body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Sidebar */
@@ -64,7 +131,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 22px 16px;
-  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.03);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .brand {
@@ -92,7 +160,7 @@ body {
   height: 38px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.35));
+  filter: drop-shadow(0 0 10px rgba(0, 82, 255, 0.25));
 }
 
 .brand-text h1 {
@@ -138,9 +206,14 @@ body {
 
 .nav-item.active {
   background-color: var(--primary-subtle);
-  color: #38BDF8;
-  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--primary);
+  border-color: transparent;
   font-weight: 700;
+}
+
+[data-theme="dark"] .nav-item.active {
+  color: #38BDF8;
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 .nav-item svg {
@@ -152,7 +225,7 @@ body {
 .engine-status-pill {
   margin-top: auto;
   padding: 12px 14px;
-  background: var(--bg-card);
+  background: var(--sub-block-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   display: flex;
@@ -198,6 +271,7 @@ body {
   overflow-y: auto;
   padding: 26px 34px;
   background-color: var(--bg-dark);
+  transition: background-color 0.2s ease;
 }
 
 .top-bar {
@@ -249,30 +323,34 @@ body {
   background: var(--primary);
   color: #FFFFFF;
   border: none;
-  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 82, 255, 0.35);
 }
 
 .btn-primary:hover {
   background: var(--primary-hover);
-  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 82, 255, 0.45);
 }
 
-.btn-secondary {
-  background-color: rgba(255, 255, 255, 0.06);
+.btn-secondary,
+.btn-lang,
+#btn-theme-toggle {
+  background-color: var(--btn-sec-bg);
   color: var(--text-main);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--btn-sec-border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: rgba(0, 102, 255, 0.4);
+.btn-secondary:hover,
+.btn-lang:hover,
+#btn-theme-toggle:hover {
+  background-color: var(--btn-sec-hover);
+  border-color: var(--primary);
 }
 
 .btn-danger {
   background-color: var(--danger-bg);
   color: var(--danger);
-  border: 1px solid rgba(244, 63, 94, 0.3);
+  border: 1px solid rgba(223, 27, 65, 0.2);
 }
 
 .btn-danger:hover {
@@ -298,16 +376,16 @@ body {
   border: 1px solid var(--border-color) !important;
   border-radius: var(--radius-xl) !important;
   padding: 22px !important;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, border-color 0.2s !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, border-color 0.2s, background-color 0.2s !important;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: var(--card-shadow) !important;
 }
 
 .card:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
-  border-color: rgba(0, 102, 255, 0.35) !important;
+  box-shadow: var(--card-hover-shadow) !important;
+  border-color: var(--primary) !important;
 }
 
 .card-header {
@@ -350,15 +428,16 @@ body {
 
 /* Master Hero Card */
 .hero-boost-card {
-  background: linear-gradient(135deg, #151A28 0%, #0F131E 100%);
-  border: 1px solid rgba(0, 102, 255, 0.35);
+  background: var(--hero-card-bg);
+  border: 1px solid var(--hero-card-border);
   border-radius: var(--radius-xl);
   padding: 24px 28px;
   margin-bottom: 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: var(--hero-card-shadow);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .hero-left h3 {
@@ -384,18 +463,18 @@ body {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: -0.1px;
-  background: linear-gradient(135deg, #0052FF 0%, #0066FF 100%);
+  background: var(--primary);
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 18px rgba(0, 82, 255, 0.45);
+  box-shadow: 0 4px 18px rgba(0, 82, 255, 0.35);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .btn-hyper:hover {
-  background: linear-gradient(135deg, #0045D8 0%, #1A75FF 100%);
-  box-shadow: 0 6px 24px rgba(0, 82, 255, 0.6);
+  background: var(--primary-hover);
+  box-shadow: 0 6px 24px rgba(0, 82, 255, 0.55);
   transform: translateY(-1px);
 }
 
@@ -407,7 +486,7 @@ body {
 .progress-container {
   width: 100%;
   height: 6px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--progress-track);
   border-radius: 99px;
   margin: 12px 0;
   overflow: hidden;
@@ -448,11 +527,11 @@ body {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #161B28;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   padding: 14px 22px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -472,7 +551,7 @@ body {
 
 /* Console Log Box */
 .log-box {
-  background-color: #07090F;
+  background-color: var(--log-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 16px;
@@ -496,7 +575,7 @@ body {
 
 /* Feature Brief Box */
 .feature-brief {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--brief-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 12px 14px;
@@ -526,35 +605,19 @@ body {
 
 .tag-action {
   background: var(--primary-subtle);
-  color: #38BDF8;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--primary);
+  border: 1px solid rgba(0, 82, 255, 0.2);
 }
 
 .tag-benefit {
   background: var(--success-bg);
   color: var(--success);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(9, 133, 81, 0.2);
 }
 
 .brief-text {
   color: var(--text-muted);
   font-size: 12.5px;
-}
-
-/* Language Switcher Button */
-.btn-lang {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  padding: 8px 16px;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: var(--radius-pill);
-}
-
-.btn-lang:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(0, 102, 255, 0.4);
 }
 
 /* RTL Layout for Urdu */
@@ -643,7 +706,7 @@ body {
 
 .gauge-track {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
+  stroke: var(--gauge-track);
   stroke-width: 7;
   stroke-linecap: round;
 }
@@ -703,7 +766,7 @@ body {
   margin: 6px 0 10px;
   border-radius: 6px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--spark-bg);
   border: 1px solid var(--border-color);
 }
 
@@ -737,7 +800,7 @@ body {
   height: 6px;
   border-radius: 50%;
   background: var(--success);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
   animation: liveBlink 1.6s infinite;
 }
 
@@ -770,7 +833,7 @@ body {
   height: 125px;
   width: 100%;
   margin-top: 14px;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--stream-bg);
   border-radius: var(--radius-md);
   padding: 10px 14px;
   border: 1px solid var(--border-color);
@@ -789,7 +852,7 @@ body {
   border-radius: var(--radius-pill);
   font-size: 11px;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--badge-bg);
   color: var(--text-main);
   border: 1px solid var(--border-color);
 }
@@ -816,5 +879,5 @@ body {
 
 .clean-row:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(0, 102, 255, 0.35);
+  border-color: var(--primary);
 }

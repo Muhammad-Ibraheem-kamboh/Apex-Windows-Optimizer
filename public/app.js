@@ -384,6 +384,15 @@ function setLanguage(lang) {
 
   // Update header title & subtitle
   updateHeaderTitle();
+
+  // Re-sync theme button label
+  const themeBtnText = document.getElementById('theme-btn-text');
+  if (themeBtnText) {
+    const isDark = (document.documentElement.getAttribute('data-theme') === 'dark');
+    themeBtnText.textContent = isDark ? 
+      ((lang === 'ur') ? 'لائٹ موڈ' : 'Light Mode') : 
+      ((lang === 'ur') ? 'ڈارک موڈ' : 'Dark Mode');
+  }
 }
 
 function updateHeaderTitle() {
@@ -852,6 +861,43 @@ function initActions() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'maximize' })
       }).catch(() => {});
+    });
+  }
+
+  // ==========================================
+  // THEME ENGINE (DEFAULT: LIGHT MODE, PERSISTENT)
+  // ==========================================
+  function applyTheme(theme) {
+    const isDark = (theme === 'dark');
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('apex_theme', isDark ? 'dark' : 'light');
+
+    const themeBtnText = document.getElementById('theme-btn-text');
+    const darkIcon = document.querySelector('.theme-icon-dark');
+    const lightIcon = document.querySelector('.theme-icon-light');
+
+    if (isDark) {
+      if (themeBtnText) themeBtnText.textContent = (currentLang === 'ur') ? 'لائٹ موڈ' : 'Light Mode';
+      if (darkIcon) darkIcon.style.display = 'none';
+      if (lightIcon) lightIcon.style.display = 'inline-block';
+    } else {
+      if (themeBtnText) themeBtnText.textContent = (currentLang === 'ur') ? 'ڈارک موڈ' : 'Dark Mode';
+      if (darkIcon) darkIcon.style.display = 'inline-block';
+      if (lightIcon) lightIcon.style.display = 'none';
+    }
+  }
+
+  // Load saved theme or default to LIGHT mode
+  const initialTheme = localStorage.getItem('apex_theme') || 'light';
+  applyTheme(initialTheme);
+
+  const btnThemeToggle = document.getElementById('btn-theme-toggle');
+  if (btnThemeToggle) {
+    btnThemeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const targetTheme = (current === 'dark') ? 'light' : 'dark';
+      applyTheme(targetTheme);
+      showToast(targetTheme === 'dark' ? '🌙 Dark Mode Activated' : '☀️ Light Mode Activated');
     });
   }
 
