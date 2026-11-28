@@ -1,0 +1,8 @@
+# Antigravity Context Filter - Prevent token bloat
+node_modules/
+dist/
+build/
+.cache/
+.git/
+package-lock.json
+*.log

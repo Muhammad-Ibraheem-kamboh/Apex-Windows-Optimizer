@@ -16,6 +16,7 @@ yarn-error.log*
 .env
 .env.local
 *.log
+autopilot.config.json
 
 # OS-specific
 Thumbs.db

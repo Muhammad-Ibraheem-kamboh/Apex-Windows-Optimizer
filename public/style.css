@@ -1,31 +1,31 @@
 :root {
-  /* Coinbase iOS Clean Surface Palette */
-  --bg-dark: #F7F8FA;              /* App main canvas background */
-  --bg-card: #FFFFFF;              /* Card & panel surfaces */
-  --bg-card-hover: #F2F4F7;        /* Hover states */
-  --bg-sidebar: #FFFFFF;           /* Sidebar surface */
-  --border-color: #E6E8EC;         /* Hairline dividers */
-  --border-subtle: #F0F2F5;
-  --border-glow: rgba(0, 82, 255, 0.15);
+  /* 21st.dev / Linear Agency-Grade Dark Theme Palette */
+  --bg-dark: #090B10;              /* Main obsidian canvas background */
+  --bg-card: #111520;              /* Card & panel surfaces */
+  --bg-card-hover: #171E2E;        /* Hover states */
+  --bg-sidebar: #0C0F17;           /* Sidebar surface */
+  --border-color: rgba(255, 255, 255, 0.08); /* Hairline dividers */
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-glow: rgba(0, 102, 255, 0.30);
 
-  /* Coinbase Brand Colors */
-  --primary: #0052FF;              /* Signature Coinbase Electric Blue */
-  --primary-hover: #0045D8;
-  --primary-glow: rgba(0, 82, 255, 0.20);
-  --primary-subtle: #EBF2FF;        /* 10% soft blue tint for badges/pills */
-  --cyan: #0052FF;
+  /* Signature Electric Blue & Cyber Cyan */
+  --primary: #0066FF;              /* Vibrant Electric Blue */
+  --primary-hover: #1A75FF;
+  --primary-glow: rgba(0, 102, 255, 0.40);
+  --primary-subtle: rgba(0, 102, 255, 0.14);
+  --cyan: #00F0FF;
 
   /* Semantic Feedback */
-  --success: #098551;              /* Coinbase Fintech Forest Green */
-  --success-bg: #E8F7F0;
+  --success: #10B981;              /* Modern Emerald */
+  --success-bg: rgba(16, 185, 129, 0.14);
   --warning: #F59E0B;
-  --danger: #DF1B41;              /* Modern Fintech Crimson */
-  --danger-bg: #FEE8EC;
+  --danger: #F43F5E;              /* Modern Crimson */
+  --danger-bg: rgba(244, 63, 94, 0.14);
 
-  /* High-Contrast Humanized Typography */
-  --text-main: #0A0B0D;            /* Deep Obsidian Black */
-  --text-muted: #5B616E;           /* Steel Gray labels */
-  --text-subtle: #8A919E;          /* Muted Secondary */
+  /* High-Contrast Crisp Typography */
+  --text-main: #F8FAFC;            /* Bright Crisp White */
+  --text-muted: #94A3B8;           /* Slate Gray labels */
+  --text-subtle: #64748B;          /* Muted Secondary */
 
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", sans-serif;
   --font-mono: "SF Mono", "JetBrains Mono", Consolas, monospace;
@@ -35,7 +35,7 @@
   --radius-md: 12px;
   --radius-lg: 18px;
   --radius-xl: 24px;
-  --radius-pill: 9999px;           /* Authentic Coinbase Pill style */
+  --radius-pill: 9999px;
 }
 
 * {
@@ -64,7 +64,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 22px 16px;
-  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.03);
 }
 
 .brand {
@@ -76,8 +76,8 @@ body {
 }
 
 .brand-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   background: transparent;
   border: none;
   padding: 0;
@@ -88,10 +88,11 @@ body {
 }
 
 .brand-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.35));
 }
 
 .brand-text h1 {
@@ -131,14 +132,14 @@ body {
 }
 
 .nav-item:hover {
-  background-color: #F4F5F7;
+  background-color: var(--bg-card-hover);
   color: var(--text-main);
 }
 
 .nav-item.active {
   background-color: var(--primary-subtle);
-  color: var(--primary);
-  border-color: transparent;
+  color: #38BDF8;
+  border-color: rgba(56, 189, 248, 0.3);
   font-weight: 700;
 }
 
@@ -151,7 +152,7 @@ body {
 .engine-status-pill {
   margin-top: auto;
   padding: 12px 14px;
-  background: #F7F8FA;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   display: flex;
@@ -164,7 +165,7 @@ body {
   height: 8px;
   border-radius: 50%;
   background-color: var(--success);
-  box-shadow: 0 0 0 3px rgba(9, 133, 81, 0.15);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
   animation: pulse 2s infinite;
 }
 
@@ -196,6 +197,7 @@ body {
   flex-direction: column;
   overflow-y: auto;
   padding: 26px 34px;
+  background-color: var(--bg-dark);
 }
 
 .top-bar {
@@ -223,7 +225,7 @@ body {
   gap: 10px;
 }
 
-/* Buttons - Authentic Coinbase Rounded Stadium Pill */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -247,29 +249,30 @@ body {
   background: var(--primary);
   color: #FFFFFF;
   border: none;
-  box-shadow: 0 3px 10px rgba(0, 82, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.35);
 }
 
 .btn-primary:hover {
   background: var(--primary-hover);
-  box-shadow: 0 4px 14px rgba(0, 82, 255, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.45);
 }
 
 .btn-secondary {
-  background-color: #F4F5F7;
+  background-color: rgba(255, 255, 255, 0.06);
   color: var(--text-main);
   border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .btn-secondary:hover {
-  background-color: #ECEEF2;
-  border-color: #DDE0E5;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 102, 255, 0.4);
 }
 
 .btn-danger {
   background-color: var(--danger-bg);
   color: var(--danger);
-  border: 1px solid rgba(223, 27, 65, 0.2);
+  border: 1px solid rgba(244, 63, 94, 0.3);
 }
 
 .btn-danger:hover {
@@ -295,16 +298,16 @@ body {
   border: 1px solid var(--border-color) !important;
   border-radius: var(--radius-xl) !important;
   padding: 22px !important;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, border-color 0.2s !important;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 .card:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
-  border-color: #DDE0E5 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
+  border-color: rgba(0, 102, 255, 0.35) !important;
 }
 
 .card-header {
@@ -347,15 +350,15 @@ body {
 
 /* Master Hero Card */
 .hero-boost-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #151A28 0%, #0F131E 100%);
+  border: 1px solid rgba(0, 102, 255, 0.35);
   border-radius: var(--radius-xl);
   padding: 24px 28px;
   margin-bottom: 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .hero-left h3 {
@@ -381,18 +384,18 @@ body {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: -0.1px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #0052FF 0%, #0066FF 100%);
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 14px rgba(0, 82, 255, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 82, 255, 0.45);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .btn-hyper:hover {
-  background: var(--primary-hover);
-  box-shadow: 0 6px 18px rgba(0, 82, 255, 0.45);
+  background: linear-gradient(135deg, #0045D8 0%, #1A75FF 100%);
+  box-shadow: 0 6px 24px rgba(0, 82, 255, 0.6);
   transform: translateY(-1px);
 }
 
@@ -404,7 +407,7 @@ body {
 .progress-container {
   width: 100%;
   height: 6px;
-  background-color: #ECEEF2;
+  background-color: rgba(255, 255, 255, 0.08);
   border-radius: 99px;
   margin: 12px 0;
   overflow: hidden;
@@ -445,11 +448,11 @@ body {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #FFFFFF;
+  background-color: #161B28;
   border: 1px solid var(--border-color);
   padding: 14px 22px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -469,7 +472,7 @@ body {
 
 /* Console Log Box */
 .log-box {
-  background-color: #F7F8FA;
+  background-color: #07090F;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 16px;
@@ -493,7 +496,7 @@ body {
 
 /* Feature Brief Box */
 .feature-brief {
-  background: #F8F9FA;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 12px 14px;
@@ -523,14 +526,14 @@ body {
 
 .tag-action {
   background: var(--primary-subtle);
-  color: var(--primary);
-  border: 1px solid rgba(0, 82, 255, 0.2);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
 .tag-benefit {
   background: var(--success-bg);
   color: var(--success);
-  border: 1px solid rgba(9, 133, 81, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .brief-text {
@@ -540,7 +543,7 @@ body {
 
 /* Language Switcher Button */
 .btn-lang {
-  background: #F4F5F7;
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-color);
   color: var(--text-main);
   padding: 8px 16px;
@@ -550,8 +553,8 @@ body {
 }
 
 .btn-lang:hover {
-  background: #EAECEF;
-  border-color: #DDE0E5;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 102, 255, 0.4);
 }
 
 /* RTL Layout for Urdu */
@@ -624,42 +627,6 @@ body {
   color: var(--primary);
 }
 
-/* Window Dots */
-.window-dots {
-  display: flex;
-  gap: 7px;
-  margin-bottom: 20px;
-  padding-left: 6px;
-  align-items: center;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: opacity 0.15s, transform 0.15s;
-}
-
-.dot-red {
-  background: #EC6A5E;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.dot-yellow {
-  background: #F4BF4F;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.dot-green {
-  background: #61C554;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.window-dots:hover .dot {
-  opacity: 0.85;
-}
-
 /* Speedometer Arc Gauges */
 .gauge-container {
   position: relative;
@@ -676,7 +643,7 @@ body {
 
 .gauge-track {
   fill: none;
-  stroke: #ECEEF2;
+  stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 7;
   stroke-linecap: round;
 }
@@ -736,7 +703,7 @@ body {
   margin: 6px 0 10px;
   border-radius: 6px;
   overflow: hidden;
-  background: #F7F8FA;
+  background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--border-color);
 }
 
@@ -762,7 +729,7 @@ body {
   border-radius: var(--radius-pill);
   background: var(--success-bg);
   color: var(--success);
-  border: 1px solid rgba(9, 133, 81, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .live-dot {
@@ -770,7 +737,7 @@ body {
   height: 6px;
   border-radius: 50%;
   background: var(--success);
-  box-shadow: 0 0 6px rgba(9, 133, 81, 0.4);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
   animation: liveBlink 1.6s infinite;
 }
 
@@ -803,7 +770,7 @@ body {
   height: 125px;
   width: 100%;
   margin-top: 14px;
-  background: #F7F8FA;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: var(--radius-md);
   padding: 10px 14px;
   border: 1px solid var(--border-color);
@@ -822,7 +789,7 @@ body {
   border-radius: var(--radius-pill);
   font-size: 11px;
   font-weight: 700;
-  background: #F4F5F7;
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text-main);
   border: 1px solid var(--border-color);
 }
@@ -835,7 +802,7 @@ body {
 }
 
 .clean-row {
-  background: #FFFFFF;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 12px 16px;
@@ -844,9 +811,10 @@ body {
   align-items: center;
   margin-bottom: 8px;
   transition: all 0.15s ease;
+  color: var(--text-main);
 }
 
 .clean-row:hover {
-  background: #F8F9FA;
-  border-color: #DDE0E5;
+  background: var(--bg-card-hover);
+  border-color: rgba(0, 102, 255, 0.35);
 }

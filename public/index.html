@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apex Windows Optimizer</title>
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+  <link rel="icon" type="image/x-icon" href="/apex_optimizer.ico?v=3">
   <link rel="icon" type="image/svg+xml" href="/apex-icon.svg?v=3">
   <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png?v=3">
   <link rel="icon" type="image/png" sizes="64x64" href="/icon-64.png?v=3">
@@ -20,13 +20,6 @@
 
   <!-- Sidebar -->
   <aside class="sidebar">
-    <!-- Mac-style Window Controls (Image 1 & 2 Style) -->
-    <div class="window-dots">
-      <span class="dot dot-red" title="Close"></span>
-      <span class="dot dot-yellow" title="Minimize"></span>
-      <span class="dot dot-green" title="Maximize"></span>
-    </div>
-
     <div class="brand">
       <div class="brand-icon">
         <img src="/apex-icon.svg?v=3" alt="Apex Windows Optimizer" class="brand-logo-img">
@@ -188,32 +181,32 @@
             </svg>
           </div>
 
-          <div class="card-subtext" id="cpu-details">2 Cores / 4 Threads • Base 2.80 GHz</div>
+          <div class="card-subtext" id="cpu-details">Detecting cores, threads &amp; clock...</div>
 
           <!-- Graphical CPU Clock & Cache Meters -->
-          <div class="cache-hierarchy" style="margin-top: 12px; padding: 12px 14px; background: #F8F9FA; border-radius: 12px; border: 1px solid #E6E8EC; font-size: 11.5px;">
+          <div class="cache-hierarchy" style="margin-top: 12px; padding: 12px 14px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--border-color); font-size: 11.5px;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <span style="color: #5B616E; font-weight: 600;">Clock Speed</span>
-              <span id="cpu-live-clock" style="color: #0052FF; font-weight: 700;">2803 MHz / 2904 MHz</span>
+              <span style="color: var(--text-muted); font-weight: 600;">Clock Speed</span>
+              <span id="cpu-live-clock" style="color: var(--primary); font-weight: 700;">-- MHz / -- MHz</span>
             </div>
-            <div style="background: #EAECEF; height: 6px; border-radius: 99px; overflow: hidden; margin-bottom: 9px;">
-              <div id="cpu-clock-bar" style="background: #0052FF; width: 96%; height: 100%; transition: width 0.3s ease;"></div>
+            <div style="background: rgba(255, 255, 255, 0.08); height: 6px; border-radius: 99px; overflow: hidden; margin-bottom: 9px;">
+              <div id="cpu-clock-bar" style="background: var(--primary); width: 0%; height: 100%; transition: width 0.3s ease;"></div>
             </div>
 
             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <span style="color: #5B616E; font-weight: 600;">L2 Cache (~100 GB/s)</span>
-              <span id="cpu-l2-val" style="color: #4F46E5; font-weight: 700;">512 KB</span>
+              <span style="color: var(--text-muted); font-weight: 600;">L2 Cache</span>
+              <span id="cpu-l2-val" style="color: #818CF8; font-weight: 700;">-- KB</span>
             </div>
-            <div style="background: #EAECEF; height: 6px; border-radius: 99px; overflow: hidden; margin-bottom: 9px;">
-              <div id="cpu-l2-bar" style="background: #4F46E5; width: 100%; height: 100%;"></div>
+            <div style="background: rgba(255, 255, 255, 0.08); height: 6px; border-radius: 99px; overflow: hidden; margin-bottom: 9px;">
+              <div id="cpu-l2-bar" style="background: #818CF8; width: 100%; height: 100%;"></div>
             </div>
 
             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-              <span style="color: #5B616E; font-weight: 600;">L3 Smart Cache (~50 GB/s)</span>
-              <span id="cpu-l3-val" style="color: #098551; font-weight: 700;">4096 KB (4 MB)</span>
+              <span style="color: var(--text-muted); font-weight: 600;">L3 Smart Cache</span>
+              <span id="cpu-l3-val" style="color: var(--success); font-weight: 700;">-- KB</span>
             </div>
-            <div style="background: #EAECEF; height: 6px; border-radius: 99px; overflow: hidden;">
-              <div id="cpu-l3-bar" style="background: #098551; width: 100%; height: 100%;"></div>
+            <div style="background: rgba(255, 255, 255, 0.08); height: 6px; border-radius: 99px; overflow: hidden;">
+              <div id="cpu-l3-bar" style="background: var(--success); width: 100%; height: 100%;"></div>
             </div>
           </div>
         </div>
@@ -302,7 +295,7 @@
           <div class="progress-container" style="margin-top: 10px;">
             <div class="progress-bar" id="disk-bar" style="width: 0%; background: linear-gradient(90deg, #0F766E, #14B8A6);"></div>
           </div>
-          <div class="card-subtext" id="disk-details">SSD Volume • NTFS File System</div>
+          <div class="card-subtext" id="disk-details">Detecting storage volume...</div>
         </div>
 
         <!-- Battery Card -->
@@ -355,9 +348,9 @@
             <span class="pulse-live-badge"><span class="live-dot"></span> LIVE METRICS</span>
           </div>
           <div class="telemetry-legend">
-            <span class="legend-item"><span class="legend-dot" style="background: #38BDF8;"></span> CPU: <strong id="legend-cpu-val" style="color:#38BDF8">0%</strong></span>
-            <span class="legend-item"><span class="legend-dot" style="background: #34D399;"></span> RAM: <strong id="legend-ram-val" style="color:#34D399">0%</strong></span>
-            <span class="legend-item"><span class="legend-dot" style="background: #94A3B8;"></span> Tasks: <strong id="legend-tasks-val" style="color:#F8FAFC">0</strong></span>
+            <span class="legend-item"><span class="legend-dot" style="background: #0052FF;"></span> CPU: <strong id="legend-cpu-val" style="color:#0052FF">0%</strong></span>
+            <span class="legend-item"><span class="legend-dot" style="background: #098551;"></span> RAM: <strong id="legend-ram-val" style="color:#098551">0%</strong></span>
+            <span class="legend-item"><span class="legend-dot" style="background: #5B616E;"></span> Tasks: <strong id="legend-tasks-val" style="color:var(--text-main)">0</strong></span>
           </div>
         </div>
 
@@ -399,7 +392,7 @@
       <div class="card" style="margin-bottom: 18px;">
         <div class="card-header">
           <span class="card-title" data-i18n="mem_trimmer_title">Working-Set Memory Flush</span>
-          <span class="badge" style="background: rgba(99,102,241,0.15); color: #818CF8;" data-i18n="tag_safe">100% Safe</span>
+          <span class="badge" style="background: var(--success-bg); color: var(--success); border-color: rgba(9,133,81,0.2);" data-i18n="tag_safe">100% Safe</span>
         </div>
         
         <div class="feature-brief">
@@ -420,10 +413,10 @@
       </div>
 
       <!-- Bloat Terminator -->
-      <div class="card">
+      <div class="card" style="margin-bottom: 18px;">
         <div class="card-header">
           <span class="card-title" data-i18n="mem_bloat_title">Background Bloat Terminator</span>
-          <span class="badge" style="background: rgba(239,68,68,0.15); color: #F87171;" data-i18n="tag_power">Power Saver</span>
+          <span class="badge" style="background: var(--danger-bg); color: var(--danger); border-color: rgba(223,27,65,0.2);" data-i18n="tag_power">Power Saver</span>
         </div>
 
         <div class="feature-brief">
@@ -441,6 +434,30 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           <span data-i18n="btn_kill_bloat">Terminate Background Bloat</span>
         </button>
+      </div>
+
+      <!-- AI / LLM & Developer Max Power Mode -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" data-i18n="llm_title">LLM &amp; Developer Max Power Mode</span>
+          <span class="badge" id="wsl-status-badge" style="background: var(--primary-subtle); color: var(--primary); border-color: rgba(0,82,255,0.2);">WSL: Checking...</span>
+        </div>
+
+        <div class="feature-brief">
+          <div class="brief-row">
+            <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
+            <span class="brief-text" data-i18n="llm_what">Shuts down idle WSL virtualization (vmmemWSL), pauses Search/SysMain indexing, and deep-flushes working sets.</span>
+          </div>
+          <div class="brief-row">
+            <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
+            <span class="brief-text" data-i18n="llm_why">Reclaims 1.5–3 GB RAM for local AI models, Dockerless builds, compilers, and heavy IDEs.</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-hyper" id="btn-llm-max" data-i18n="btn_llm_max">🚀 Engage LLM Max Mode</button>
+          <button class="btn btn-secondary" id="btn-restore-services" data-i18n="btn_restore_services">Restore Background Services</button>
+        </div>
       </div>
     </section>
 
@@ -478,7 +495,7 @@
         <div class="card">
           <div class="card-header">
             <span class="card-title" data-i18n="stor_trim_title">Solid State Drive (SSD) ReTrim</span>
-            <span class="badge" style="background: rgba(6,182,212,0.15); color: #22D3EE;" data-i18n="tag_ssd">Hardware TRIM</span>
+            <span class="badge" style="background: var(--primary-subtle); color: var(--primary); border-color: rgba(0,82,255,0.2);" data-i18n="tag_ssd">Hardware TRIM</span>
           </div>
           <div class="card-value" style="font-size: 20px; color: var(--cyan);">NAND Refresh</div>
           <div class="card-subtext" data-i18n="stor_trim_sub">Wear-leveling optimization for SSD</div>
@@ -509,17 +526,17 @@
         <div class="feature-brief">
           <div class="brief-row">
             <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
-            <span class="brief-text" data-i18n="stor_hiber_what">Windows reserves 8 GB storage for hibernation matching your RAM. Reduced mode keeps Fast Startup.</span>
+            <span class="brief-text" data-i18n="stor_hiber_what">Windows reserves disk space for hibernation matching your RAM. Reduced mode keeps Fast Startup.</span>
           </div>
           <div class="brief-row">
             <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
-            <span class="brief-text" data-i18n="stor_hiber_why">Saves 4 GB to 8 GB of internal SSD space instantly with 1 click.</span>
+            <span class="brief-text" data-i18n="stor_hiber_why">Saves ~50% to 100% of hiberfil.sys SSD space instantly (requires Administrator).</span>
           </div>
         </div>
 
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button class="btn btn-secondary" id="btn-hiber-reduced" data-i18n="btn_hiber_reduced">Reduced Mode (Save 4GB)</button>
-          <button class="btn btn-danger" id="btn-hiber-off" data-i18n="btn_hiber_off">Disable (Save 8GB)</button>
+          <button class="btn btn-secondary" id="btn-hiber-reduced" data-i18n="btn_hiber_reduced">Reduced Mode (~50% Smaller)</button>
+          <button class="btn btn-danger" id="btn-hiber-off" data-i18n="btn_hiber_off">Disable (100% Freed)</button>
           <button class="btn btn-secondary" id="btn-hiber-full" data-i18n="btn_hiber_full">Standard Full Mode</button>
         </div>
       </div>
@@ -532,7 +549,7 @@
       <div class="card" style="margin-bottom: 18px;">
         <div class="card-header">
           <span class="card-title" data-i18n="net_title">DNS & Network Latency Purge</span>
-          <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399;" data-i18n="tag_fast_net">Low Latency</span>
+          <span class="badge" style="background: var(--success-bg); color: var(--success); border-color: rgba(9,133,81,0.2);" data-i18n="tag_fast_net">Low Latency</span>
         </div>
 
         <div class="feature-brief">
@@ -560,7 +577,7 @@
       <div class="card" style="margin-bottom: 18px;">
         <div class="card-header">
           <span class="card-title" data-i18n="game_title">Ultra Gaming Boost Mode</span>
-          <span class="badge" style="background: rgba(245,158,11,0.15); color: #FBBF24;" data-i18n="tag_max_fps">Max FPS</span>
+          <span class="badge" style="background: #FEF3C7; color: #B45309; border-color: rgba(245,158,11,0.25);" data-i18n="tag_max_fps">Max FPS</span>
         </div>
 
         <div class="feature-brief">
@@ -593,7 +610,7 @@
       <div class="card" style="margin-bottom: 18px;">
         <div class="card-header">
           <span class="card-title" data-i18n="tweak_snap_title">Instant UI Responsiveness (Zero Menu Delay)</span>
-          <span class="badge" style="background: rgba(99,102,241,0.15); color: #818CF8;" data-i18n="tag_instant">Zero Latency</span>
+          <span class="badge" style="background: var(--primary-subtle); color: var(--primary); border-color: rgba(0,82,255,0.2);" data-i18n="tag_instant">Zero Latency</span>
         </div>
 
         <div class="feature-brief">
@@ -617,7 +634,7 @@
         <div class="card">
           <div class="card-header">
             <span class="card-title" data-i18n="tweak_tcp_title">TCP Network Stack Tuning</span>
-            <span class="badge" style="background: rgba(6,182,212,0.15); color: #22D3EE;">TCP Level</span>
+            <span class="badge" style="background: var(--primary-subtle); color: var(--primary); border-color: rgba(0,82,255,0.2);">TCP Level</span>
           </div>
 
           <div class="feature-brief">
@@ -640,7 +657,7 @@
         <div class="card">
           <div class="card-header">
             <span class="card-title" data-i18n="tweak_trans_title">GPU VRAM Transparency Saver</span>
-            <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399;">Intel HD 620</span>
+            <span class="badge" id="gpu-badge" style="background: var(--success-bg); color: var(--success); border-color: rgba(9,133,81,0.2);">DWM / GPU</span>
           </div>
 
           <div class="feature-brief">
@@ -719,7 +736,7 @@
       <div class="card" style="margin-bottom: 18px;">
         <div class="card-header">
           <span class="card-title" data-i18n="auto_title">Autonomous Background Rules</span>
-          <span class="badge" style="background: rgba(16,185,129,0.15); color: #34D399;" data-i18n="tag_active_watchdog">Watchdog 30s</span>
+          <span class="badge" style="background: var(--success-bg); color: var(--success); border-color: rgba(9,133,81,0.2);" data-i18n="tag_active_watchdog">Watchdog 2m</span>
         </div>
 
         <div class="feature-brief">
@@ -788,7 +805,7 @@
         <div class="card">
           <div class="card-header">
             <span class="card-title" data-i18n="util_backup_title">One-Click Critical Backup</span>
-            <span class="badge" style="background: rgba(59,130,246,0.15); color: #60A5FA;">1-Click Protect</span>
+            <span class="badge" style="background: var(--primary-subtle); color: var(--primary); border-color: rgba(0,82,255,0.2);">1-Click Protect</span>
           </div>
 
           <div class="feature-brief">
@@ -802,14 +819,14 @@
             </div>
           </div>
 
-          <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">
+          <div style="background: #F8F9FA; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; border: 1px solid var(--border-color);">
+            <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-muted); margin-bottom: 4px;">
               <span>Backup Target:</span>
-              <span style="color: var(--accent); font-weight: 600;" id="backup-target-hint">D:\ApexBackups (or C:\)</span>
+              <span style="color: var(--primary); font-weight: 700;" id="backup-target-hint">D:\ApexBackups (or C:\)</span>
             </div>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted);">
+            <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-muted);">
               <span>Status:</span>
-              <span style="color: #34D399;" id="backup-status-text">Ready to snapshot</span>
+              <span style="color: var(--success); font-weight: 700;" id="backup-status-text">Ready to snapshot</span>
             </div>
           </div>
 
@@ -823,13 +840,13 @@
         <div class="card">
           <div class="card-header">
             <span class="card-title" data-i18n="util_clean_title">Deep Cache & Junk Purger</span>
-            <span class="badge" style="background: rgba(239,68,68,0.15); color: #F87171;">Full Flush</span>
+            <span class="badge" style="background: var(--danger-bg); color: var(--danger); border-color: rgba(223,27,65,0.2);">Full Flush</span>
           </div>
 
           <div class="feature-brief">
             <div class="brief-row">
               <span class="brief-tag tag-action" data-i18n="lbl_what">What it does</span>
-              <span class="brief-text" data-i18n="util_clean_what">Wipes hidden Windows Temp, Prefetch, Windows Update download cache, Thumbnail DB, and browser temporary caches.</span>
+              <span class="brief-text" data-i18n="util_clean_what">Wipes hidden Windows Temp, Windows Update download cache, Thumbnail DB, Chrome cache, and DNS cache.</span>
             </div>
             <div class="brief-row">
               <span class="brief-tag tag-benefit" data-i18n="lbl_why">Why click</span>
@@ -837,18 +854,18 @@
             </div>
           </div>
 
-          <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">
+          <div style="background: #F8F9FA; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; border: 1px solid var(--border-color);">
+            <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-muted); margin-bottom: 4px;">
               <span>Targets:</span>
-              <span style="color: var(--text-main);">Temp, Prefetch, SoftwareDistribution, DNS</span>
+              <span style="color: var(--text-main); font-weight: 600;">Temp, SoftwareDist, Chrome, Thumbcache, DNS</span>
             </div>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted);">
+            <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-muted);">
               <span>Last Purge:</span>
-              <span style="color: #60A5FA;" id="cache-last-cleaned">Not run yet</span>
+              <span style="color: var(--primary); font-weight: 700;" id="cache-last-cleaned">Not run yet</span>
             </div>
           </div>
 
-          <button class="btn btn-primary" id="btn-run-deep-clean" style="width: 100%; background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">
+          <button class="btn btn-danger" id="btn-run-deep-clean" style="width: 100%;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
             <span data-i18n="btn_start_clean">🧹 Deep Purge All Caches</span>
           </button>
@@ -878,25 +895,25 @@
 
         <!-- Dev Tools Status Grid -->
         <div id="dev-tools-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 16px;">
-          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="font-weight: 600; font-size: 13px;">Git Version Control</div>
-            <div style="font-size: 12px; color: #34D399;" id="dev-git-status">Checking...</div>
+          <div style="background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+            <div style="font-weight: 700; font-size: 13px; color: var(--text-main);">Git Version Control</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="dev-git-status">Checking...</div>
           </div>
-          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="font-weight: 600; font-size: 13px;">Node.js Runtime</div>
-            <div style="font-size: 12px; color: #34D399;" id="dev-node-status">Checking...</div>
+          <div style="background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+            <div style="font-weight: 700; font-size: 13px; color: var(--text-main);">Node.js Runtime</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="dev-node-status">Checking...</div>
           </div>
-          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="font-weight: 600; font-size: 13px;">Python Environment</div>
-            <div style="font-size: 12px; color: var(--text-muted);" id="dev-python-status">Checking...</div>
+          <div style="background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+            <div style="font-weight: 700; font-size: 13px; color: var(--text-main);">Python Environment</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="dev-python-status">Checking...</div>
           </div>
-          <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="font-weight: 600; font-size: 13px;">PowerShell Policy</div>
-            <div style="font-size: 12px; color: #FBBF24;" id="dev-ps-status">Checking...</div>
+          <div style="background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+            <div style="font-weight: 700; font-size: 13px; color: var(--text-main);">PowerShell Policy</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;" id="dev-ps-status">Checking...</div>
           </div>
         </div>
 
-        <button class="btn btn-primary" id="btn-run-dev-setup" style="width: 100%; background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+        <button class="btn btn-primary" id="btn-run-dev-setup" style="width: 100%; background: var(--success);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <span data-i18n="btn_start_dev">🚀 Setup Developer Environment</span>
         </button>
@@ -906,7 +923,7 @@
       <div class="card">
         <div class="card-header">
           <span class="card-title" data-i18n="util_rescue_title">Desktop & Network Rescue Tools</span>
-          <span class="badge" style="background: rgba(168,85,247,0.15); color: #C084FC;">Instant Rescue</span>
+          <span class="badge" style="background: var(--primary-subtle); color: var(--primary); border-color: rgba(0,82,255,0.2);">Instant Rescue</span>
         </div>
 
         <div class="feature-brief">

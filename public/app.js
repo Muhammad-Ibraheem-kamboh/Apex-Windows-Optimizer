@@ -49,7 +49,7 @@ const I18N = {
     btn_start_backup: "💾 Run One-Click Backup",
 
     util_clean_title: "Deep Cache & Junk Purger",
-    util_clean_what: "Wipes hidden Windows Temp, Prefetch, Windows Update download cache, Thumbnail DB, and browser temporary caches.",
+    util_clean_what: "Wipes Windows Temp, Windows Update download cache, Thumbnail DB, Chrome cache, and DNS cache.",
     util_clean_why: "Reclaims gigabytes of trapped disk space and eliminates mysterious system slowdowns and browser lags.",
     btn_start_clean: "🧹 Deep Purge All Caches",
 
@@ -90,6 +90,12 @@ const I18N = {
     mem_bloat_why: "Saves ~300 to 500 MB RAM and prevents CPU wakeups to make your laptop run cooler.",
     btn_kill_bloat: "Terminate Background Bloat",
 
+    llm_title: "LLM & Developer Max Power Mode",
+    llm_what: "Shuts down idle WSL virtualization (vmmemWSL), pauses Search/SysMain indexing, and deep-flushes working sets.",
+    llm_why: "Reclaims 1.5–3 GB RAM for local AI models, Dockerless builds, compilers, and heavy IDEs.",
+    btn_llm_max: "🚀 Engage LLM Max Mode",
+    btn_restore_services: "Restore Background Services",
+
     // Storage Tab
     stor_junk_title: "Cleanable Junk Purger",
     btn_scan: "Scan",
@@ -105,10 +111,10 @@ const I18N = {
     btn_trim: "Run SSD ReTrim",
 
     stor_hiber_title: "Hibernation Storage Management (hiberfil.sys)",
-    stor_hiber_what: "Windows reserves 8 GB storage for hibernation matching your RAM. Reduced mode keeps Fast Startup.",
-    stor_hiber_why: "Saves 4 GB to 8 GB of internal SSD space instantly with 1 click.",
-    btn_hiber_reduced: "Reduced Mode (Save 4GB)",
-    btn_hiber_off: "Disable (Save 8GB)",
+    stor_hiber_what: "Windows reserves disk space for hibernation matching your RAM. Reduced mode keeps Fast Startup.",
+    stor_hiber_why: "Saves ~50% to 100% of hiberfil.sys SSD space instantly (requires Administrator).",
+    btn_hiber_reduced: "Reduced Mode (~50% Smaller)",
+    btn_hiber_off: "Disable (100% Freed)",
     btn_hiber_full: "Standard Full Mode",
 
     // Network Tab
@@ -156,7 +162,7 @@ const I18N = {
 
     // Auto-Pilot
     auto_title: "Autonomous Background Rules",
-    tag_active_watchdog: "Watchdog 30s",
+    tag_active_watchdog: "Watchdog 2m",
     auto_what: "Runs silently in background to automatically clean RAM and storage whenever needed.",
     auto_why: "Zero manual work. Your laptop stays fast 24/7 without opening this app constantly.",
     auto_ram_title: "Auto-Flush RAM at High Load",
@@ -177,6 +183,7 @@ const I18N = {
     nav_tweaks: "سسٹم ٹویکس",
     nav_power: "پاور اور بیٹری",
     nav_autopilot: "آٹو پائلٹ",
+    nav_utilities: "ڈیسک ٹاپ یوٹیلیٹیز",
     guard_active: "سسٹم گارڈ فعال ہے",
     guard_desc: "خودکار ریم اور اسٹوریج شیلڈ",
 
@@ -202,6 +209,30 @@ const I18N = {
     sub_power: "پاور پلانز اور 85 فیصد بیٹری حفاظت الرٹ",
     title_autopilot: "آٹو پائلٹ قوانین",
     sub_autopilot: "خودکار بیک گراؤنڈ واچ ڈاگ اور سرگرمی لاگز",
+    title_utilities: "ڈیسک ٹاپ یوٹیلیٹیز سوٹ",
+    sub_utilities: "ایک کلک بیک اپ، ڈیپ کیشے صفائی اور ڈیولپر سیٹ اپ",
+
+    // Utilities Tab
+    util_backup_title: "ون کلک کریٹیکل بیک اپ",
+    util_backup_what: "آپ کے ڈیسک ٹاپ، ڈاکیومنٹس اور کروم بُک مارکس کا محفوظ بیک اپ بناتا ہے۔",
+    util_backup_why: "اہم کام، کوڈ اور براؤزر سیٹنگز کو کسی بھی مسئلے سے محفوظ رکھتا ہے۔",
+    btn_start_backup: "💾 ون کلک بیک اپ چلائیں",
+
+    util_clean_title: "ڈیپ کیشے اور جنک کلینر",
+    util_clean_what: "ونڈوز ٹیمپ، اپڈیٹ کیشے، تھمب نیل، کروم کیشے اور ڈی این ایس صاف کرتا ہے۔",
+    util_clean_why: "جگہ خالی کرتا ہے اور براؤزر و سسٹم کی سستی کو ختم کرتا ہے۔",
+    btn_start_clean: "🧹 تمام کیشے صاف کریں",
+
+    util_dev_title: "ڈیولپر انوائرمنٹ ون کلک سیٹ اپ",
+    util_dev_what: "Git، Node.js، Python چیک کرتا ہے اور پاور شیل اسکرپٹ پالیسی فعال کرتا ہے۔",
+    util_dev_why: "چند سیکنڈز میں کوڈنگ کے لیے لیپ ٹاپ کو مکمل طور پر تیار کرتا ہے۔",
+    btn_start_dev: "🚀 ڈیولپر انوائرمنٹ سیٹ اپ کریں",
+
+    util_rescue_title: "ڈیسک ٹاپ اور نیٹ ورک ریسکیو ٹولز",
+    util_rescue_what: "اٹکے ہوئے ونڈوز ایکسپلورر اور خراب نیٹ ورک کنکشن کو فوری بحال کرتا ہے۔",
+    util_rescue_why: "کمپیوٹر ری اسٹارٹ کیے بغیر سسٹم اور انٹرنیٹ بحال کرتا ہے۔",
+    btn_restart_exp: "🔄 ونڈوز ایکسپلورر ری اسٹارٹ کریں",
+    btn_reset_net: "🌐 نیٹ ورک اور ڈی این ایس ری سیٹ کریں",
 
     // Dashboard
     hyper_title: "ماسٹر ہائپر بوسٹ موڈ",
@@ -229,6 +260,12 @@ const I18N = {
     mem_bloat_why: "300 سے 500 ایم بی ریم بچاتا ہے اور لیپ ٹاپ کو ٹھنڈا رکھتا ہے۔",
     btn_kill_bloat: "بیک گراؤنڈ بلوٹ بند کریں",
 
+    llm_title: "ایل ایل ایم اور ڈیولپر میکس پاور موڈ",
+    llm_what: "غیر ضروری WSL ورچوئلائزیشن بند کرتا ہے، سرچ/SysMain سروسز روکتا ہے اور گہری ریم صفائی کرتا ہے۔",
+    llm_why: "لوکل AI ماڈلز اور بھاری IDEs کے لیے 1.5 سے 3 جی بی تک ریم فوری خالی کرتا ہے۔",
+    btn_llm_max: "🚀 ایل ایل ایم میکس موڈ فعال کریں",
+    btn_restore_services: "بیک گراؤنڈ سروسز بحال کریں",
+
     // Storage Tab
     stor_junk_title: "فالتو جنک فائل کلینر",
     btn_scan: "اسکین کریں",
@@ -244,10 +281,10 @@ const I18N = {
     btn_trim: "ایس ایس ڈی ری ٹرم چلائیں",
 
     stor_hiber_title: "ہائبرنیشن سائز کنٹرول (hiberfil.sys)",
-    stor_hiber_what: "ونڈوز 8 جی بی جگہ ہائبرنیشن کے لیے محفوظ رکھتی ہے۔ ریڈیوسڈ موڈ فاسٹ اسٹارٹ اپ کو برقرار رکھتا ہے۔",
-    stor_hiber_why: "صرف 1 کلک میں 4 سے 8 جی بی ایس ایس ڈی کی قیمتی جگہ بچاتا ہے۔",
-    btn_hiber_reduced: "ریڈیوسڈ موڈ (4GB بچائیں)",
-    btn_hiber_off: "ہائبرنیشن بند کریں (8GB بچائیں)",
+    stor_hiber_what: "ونڈوز ریم کے برابر جگہ ہائبرنیشن کے لیے محفوظ رکھتی ہے۔ ریڈیوسڈ موڈ فاسٹ اسٹارٹ اپ کو برقرار رکھتا ہے۔",
+    stor_hiber_why: "ایس ایس ڈی کی 50% سے 100% ہائبرنیشن جگہ بچاتا ہے (ایڈمنسٹریٹر درکار)۔",
+    btn_hiber_reduced: "ریڈیوسڈ موڈ (~50% بچائیں)",
+    btn_hiber_off: "ہائبرنیشن بند کریں (100% خالی)",
     btn_hiber_full: "فل اسٹینڈرڈ موڈ",
 
     // Network Tab
@@ -277,12 +314,12 @@ const I18N = {
     btn_tweak_tcp: "ٹی سی پی اسٹیک ٹیون کریں",
     tweak_trans_title: "جی پی یو ٹرانسپیرنسی سیور",
     tweak_trans_what: "ٹاسک بار اور ونڈوز کے دھندلے شیشے (Blur) کا اثر آن/آف کرتا ہے۔",
-    tweak_trans_why: "انٹیل گرافکس کی 150 ایم بی سے زائد میموری بچاتا ہے تاکہ لیپ ٹاپ گرم نہ ہو۔",
+    tweak_trans_why: "جی پی یو ویڈیو میموری (VRAM) بچاتا ہے اور ہیٹنگ کم کرتا ہے۔",
     btn_tweak_trans: "ٹرانسپیرنسی تبدیل کریں",
 
     // Power Tab
     pwr_title: "ہارڈ ویئر پرفارمنس پروفائلز",
-    pwr_what: "انٹیل کور i7 پروسیسر کی کلاک اسپیڈ اور کولنگ فین کو ایڈجسٹ کرتا ہے۔",
+    pwr_what: "سی پی یو پروسیسر کی کلاک اسپیڈ اور کولنگ فین کو ایڈجسٹ کرتا ہے۔",
     pwr_why: "گیمنگ کے لیے ہائی اسپیڈ، یا بیٹری کے لیے کول اور پرسکون موڈ منتخب کریں۔",
     btn_pwr_high: "⚡ ہائی پرفارمنس (فل کلاک اسپیڈ)",
     btn_pwr_balanced: "⚖️ متوازن (بیلنسڈ موڈ)",
@@ -295,7 +332,7 @@ const I18N = {
 
     // Auto-Pilot
     auto_title: "خودکار آٹو پائلٹ رولز",
-    tag_active_watchdog: "واچ ڈاگ 30 سیکنڈ",
+    tag_active_watchdog: "واچ ڈاگ 2 منٹ",
     auto_what: "پس منظر میں خاموشی سے چلتا ہے اور ریم اور اسٹوریج کو خود بخود صاف رکھتا ہے۔",
     auto_why: "کسی دستی کام کی ضرورت نہیں، آپ کا لیپ ٹاپ ہمیشہ تیز رہتا ہے۔",
     auto_ram_title: "ہائی لوڈ پر ریم خودکار خالی کریں",
@@ -421,8 +458,8 @@ function initNavigation() {
 // -------------------------------------------------------------
 // Telemetry History Buffers & Smooth SVG Visualizers (Images 1, 2, 3 Style)
 // -------------------------------------------------------------
-const cpuHistory = [18, 24, 20, 28, 22, 26, 31, 25, 29, 22, 27, 24];
-const ramHistory = [58, 62, 60, 63, 61, 64, 62, 63, 62, 64, 63, 64];
+const cpuHistory = [];
+const ramHistory = [];
 
 function setGaugeArc(arcId, percent) {
   const arc = document.getElementById(arcId);
@@ -538,7 +575,7 @@ async function updateStats() {
       const threadsStr = (currentLang === 'ur') ? 'تھریڈز' : 'Threads';
       const cpuDetEl = document.getElementById('cpu-details');
       if (cpuDetEl) {
-        const clockStr = data.cpu.currentClockMhz ? `${data.cpu.currentClockMhz} MHz` : '2.80 GHz';
+        const clockStr = data.cpu.currentClockMhz ? `${data.cpu.currentClockMhz} MHz` : '-- MHz';
         const cacheStr = data.cpu.l3CacheKb ? ` • L3: ${data.cpu.l3CacheKb} KB` : '';
         cpuDetEl.textContent = `${data.cpu.cores} ${coresStr} / ${data.cpu.threads} ${threadsStr} • ${clockStr}${cacheStr}`;
       }
@@ -547,17 +584,19 @@ async function updateStats() {
       const liveClockEl = document.getElementById('cpu-live-clock');
       const clockBarEl = document.getElementById('cpu-clock-bar');
       if (liveClockEl && data.cpu.currentClockMhz) {
-        liveClockEl.textContent = `${data.cpu.currentClockMhz} MHz / ${data.cpu.maxClockMhz || 2904} MHz`;
-        if (clockBarEl && data.cpu.maxClockMhz) {
-          const pct = Math.min(100, Math.round((data.cpu.currentClockMhz / data.cpu.maxClockMhz) * 100));
+        const maxClk = data.cpu.maxClockMhz || data.cpu.currentClockMhz;
+        liveClockEl.textContent = `${data.cpu.currentClockMhz} MHz / ${maxClk} MHz`;
+        if (clockBarEl && maxClk > 0) {
+          const pct = Math.min(100, Math.round((data.cpu.currentClockMhz / maxClk) * 100));
           clockBarEl.style.width = `${pct}%`;
         }
       }
       const l2ValEl = document.getElementById('cpu-l2-val');
       if (l2ValEl && data.cpu.l2CacheKb) l2ValEl.textContent = `${data.cpu.l2CacheKb} KB`;
       const l3ValEl = document.getElementById('cpu-l3-val');
-      if (l3ValEl && data.cpu.l3CacheKb) l3ValEl.textContent = `${data.cpu.l3CacheKb} KB (${Math.round(data.cpu.l3CacheKb / 1024)} MB)`;
+      if (l3ValEl && data.cpu.l3CacheKb) l3ValEl.textContent = `${data.cpu.l3CacheKb} KB (${(data.cpu.l3CacheKb / 1024).toFixed(1).replace(/\.0$/, '')} MB)`;
 
+      if (cpuHistory.length === 0) cpuHistory.push(Number(loadVal));
       cpuHistory.push(Number(loadVal));
       if (cpuHistory.length > 16) cpuHistory.shift();
       renderMiniSparkline('cpu-sparkline-line', 'cpu-sparkline-area', cpuHistory, 200, 32);
@@ -573,13 +612,6 @@ async function updateStats() {
       if (ramUsedEl) {
         ramUsedEl.textContent = `${data.ram.usedMb.toLocaleString()} / ${data.ram.totalMb.toLocaleString()} MB`;
       }
-      const ramBar = document.getElementById('ram-bar');
-      if (ramBar) {
-        ramBar.style.width = `${data.ram.percent}%`;
-        if (data.ram.percent > 85) ramBar.style.background = 'var(--danger)';
-        else if (data.ram.percent > 70) ramBar.style.background = 'var(--warning)';
-        else ramBar.style.background = 'linear-gradient(90deg, #059669, #34D399)';
-      }
       const freePct = (100 - data.ram.percent).toFixed(1);
       const freeLbl = (currentLang === 'ur') ? 'دستیاب میموری:' : 'Free Memory:';
       const ramFreeEl = document.getElementById('ram-free-subtext');
@@ -588,6 +620,14 @@ async function updateStats() {
         ramFreeEl.textContent = `${freeLbl} ${data.ram.freeMb.toLocaleString()} MB (${freePct}%)${spdStr}`;
       }
 
+      const wslBadge = document.getElementById('wsl-status-badge');
+      if (wslBadge) {
+        wslBadge.textContent = data.ram.wslRunning ? 'WSL: Running' : 'WSL: Idle';
+        wslBadge.style.background = data.ram.wslRunning ? '#FEF3C7' : 'var(--success-bg)';
+        wslBadge.style.color = data.ram.wslRunning ? '#B45309' : 'var(--success)';
+      }
+
+      if (ramHistory.length === 0) ramHistory.push(Number(data.ram.percent));
       ramHistory.push(Number(data.ram.percent));
       if (ramHistory.length > 16) ramHistory.shift();
       renderMiniSparkline('ram-sparkline-line', 'ram-sparkline-area', ramHistory, 200, 32);
@@ -605,15 +645,16 @@ async function updateStats() {
       const diskBar = document.getElementById('disk-bar');
       if (diskBar) diskBar.style.width = `${data.disk.percent}%`;
       const totalLbl = (currentLang === 'ur') ? 'کل:' : 'Total:';
+      const mediaLbl = data.disk.mediaType || 'Drive';
       const diskDetEl = document.getElementById('disk-details');
       if (diskDetEl) {
-        diskDetEl.textContent = `${totalLbl} ${data.disk.totalGb} GB • Free: ${data.disk.freeGb} GB (SSD)`;
+        diskDetEl.textContent = `${totalLbl} ${data.disk.totalGb} GB • Free: ${data.disk.freeGb} GB (${mediaLbl})`;
       }
     }
 
     // 4. Battery
     if (data.battery) {
-      const bPct = data.battery.percent || 100;
+      const bPct = data.battery.percent !== undefined ? data.battery.percent : 100;
       const battPctEl = document.getElementById('battery-percent');
       if (battPctEl) battPctEl.textContent = `${bPct}%`;
       setGaugeArc('battery-gauge-arc', bPct);
@@ -623,12 +664,19 @@ async function updateStats() {
       const statusBadge = document.getElementById('battery-status');
       const isCharging = data.battery.status.toLowerCase().includes('charging') && !data.battery.status.toLowerCase().includes('dis');
       if (statusBadge) {
-        statusBadge.textContent = isCharging ? (currentLang === 'ur' ? '⚡ چارج ہو رہا ہے' : '⚡ Charging') : (currentLang === 'ur' ? '🔋 بیٹری پر' : '🔋 On Battery');
+        if (data.battery.present === false) {
+          statusBadge.textContent = currentLang === 'ur' ? '🔌 ڈیسک ٹاپ / اے سی' : '🔌 Desktop / AC';
+        } else {
+          statusBadge.textContent = isCharging ? (currentLang === 'ur' ? '⚡ چارج ہو رہا ہے' : '⚡ Charging') : (currentLang === 'ur' ? '🔋 بیٹری پر' : '🔋 On Battery');
+        }
       }
 
       const battSub = document.getElementById('battery-health-subtext');
       if (battSub) {
-        if (bPct >= 85 && isCharging) {
+        if (data.battery.present === false) {
+          battSub.textContent = currentLang === 'ur' ? 'براہ راست اے سی پاور پر چل رہا ہے' : 'Running on direct AC power';
+          battSub.style.color = 'var(--text-muted)';
+        } else if (bPct >= 85 && isCharging) {
           battSub.textContent = (currentLang === 'ur') ? '⚠️ 85٪ محفوظ حد مکمل: بیٹری کی حفاظت کے لیے چارجر نکال دیں۔' : '⚠️ Safe 85% Limit Reached: Unplug to protect battery health.';
           battSub.style.color = 'var(--warning)';
         } else {
@@ -638,13 +686,23 @@ async function updateStats() {
       }
     }
 
-    // 5. Dual Telemetry Wave Stream Card (Image 3 Style)
+    // 5. GPU, Active Power Plan & Tweaks State
+    const gpuBadge = document.getElementById('gpu-badge');
+    if (gpuBadge && data.gpu && data.gpu.name) {
+      gpuBadge.textContent = data.gpu.name.replace(/\(R\)|\(TM\)/g, '').trim();
+    }
+
+    if (data.power && data.power.activePlan && window.updatePowerButtonStyles) {
+      window.updatePowerButtonStyles(data.power.activePlan);
+    }
+
+    // 6. Dual Telemetry Wave Stream Card
     const lCpu = document.getElementById('legend-cpu-val');
     if (lCpu && data.cpu) lCpu.textContent = `${data.cpu.load}%`;
     const lRam = document.getElementById('legend-ram-val');
     if (lRam && data.ram) lRam.textContent = `${data.ram.percent}%`;
     const lTasks = document.getElementById('legend-tasks-val');
-    if (lTasks) lTasks.textContent = data.processes ? `${data.processes}` : '210';
+    if (lTasks && data.processes !== undefined) lTasks.textContent = `${data.processes}`;
 
     renderTelemetryStream(cpuHistory, ramHistory);
 
@@ -688,7 +746,9 @@ async function performPost(endpoint, body = {}, successMsg = '') {
       body: JSON.stringify(body)
     });
     const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Operation failed');
+    if (!res.ok || result.success === false) {
+      throw new Error(result.message || result.error || 'Operation failed');
+    }
 
     const message = successMsg || result.message || 'Operation executed successfully';
     showToast(message);
@@ -697,8 +757,64 @@ async function performPost(endpoint, body = {}, successMsg = '') {
     return result;
   } catch (err) {
     showToast(err.message, true);
+    await fetchLogs();
+    return null;
   } finally {
     isActionRunning = false;
+  }
+}
+
+async function scanStorage(silent = false) {
+  const btnScan = document.getElementById('btn-scan-storage');
+  if (btnScan) {
+    btnScan.textContent = (currentLang === 'ur') ? 'اسکیننگ...' : 'Scanning...';
+    btnScan.disabled = true;
+  }
+  try {
+    const res = await fetch(`${API_BASE}/api/storage/scan`);
+    const data = await res.json();
+    if (data && data.totalCleanableMb !== undefined) {
+      document.getElementById('cleanable-total').textContent = `${data.totalCleanableMb} MB`;
+      const tempTotal = ((data.userTempMb || 0) + (data.sysTempMb || 0)).toFixed(1);
+      document.getElementById('cleanable-details').textContent =
+        `SoftwareDist: ${data.softDistMb || 0}MB • Temp: ${tempTotal}MB • Dumps: ${data.minidumpMb || 0}MB`;
+      if (!silent) {
+        const msg = (currentLang === 'ur') ?
+          `اسکین مکمل: ${data.totalCleanableMb} ایم بی فالتو فائلیں پائی گئیں` :
+          `Scan Complete: Found ${data.totalCleanableMb} MB cleanable junk`;
+        showToast(msg);
+      }
+    }
+  } catch (err) {
+    if (!silent) showToast('Storage scan error: ' + err.message, true);
+  } finally {
+    if (btnScan) {
+      btnScan.textContent = (currentLang === 'ur') ? 'اسکین کریں' : 'Scan';
+      btnScan.disabled = false;
+    }
+  }
+}
+
+async function loadAutoPilotConfig() {
+  try {
+    const res = await fetch(`${API_BASE}/api/autopilot`);
+    if (!res.ok) return;
+    const cfg = await res.json();
+    const checkAutoRam = document.getElementById('check-auto-ram');
+    const checkAutoStorage = document.getElementById('check-auto-storage');
+    const checkAutoBattery = document.getElementById('check-auto-battery');
+    const sliderRamThresh = document.getElementById('slider-ram-thresh');
+    const valRamThresh = document.getElementById('val-ram-thresh');
+
+    if (checkAutoRam && typeof cfg.autoRam === 'boolean') checkAutoRam.checked = cfg.autoRam;
+    if (checkAutoStorage && typeof cfg.autoCleanStorage === 'boolean') checkAutoStorage.checked = cfg.autoCleanStorage;
+    if (checkAutoBattery && typeof cfg.batteryCapAlarm === 'boolean') checkAutoBattery.checked = cfg.batteryCapAlarm;
+    if (sliderRamThresh && cfg.ramThreshold !== undefined) {
+      sliderRamThresh.value = cfg.ramThreshold;
+      if (valRamThresh) valRamThresh.textContent = `${cfg.ramThreshold}%`;
+    }
+  } catch (err) {
+    console.warn('Auto-Pilot config sync error:', err);
   }
 }
 
@@ -706,6 +822,39 @@ async function performPost(endpoint, body = {}, successMsg = '') {
 // Wire Event Listeners
 // -------------------------------------------------------------
 function initActions() {
+  // Window Control Dots (Close / Minimize / Maximize)
+  const dotClose = document.querySelector('.dot-red');
+  const dotMin = document.querySelector('.dot-yellow');
+  const dotMax = document.querySelector('.dot-green');
+  if (dotClose) {
+    dotClose.addEventListener('click', async () => {
+      window.close();
+      await fetch(`${API_BASE}/api/window/control`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'close' })
+      }).catch(() => {});
+    });
+  }
+  if (dotMin) {
+    dotMin.addEventListener('click', () => {
+      fetch(`${API_BASE}/api/window/control`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'minimize' })
+      }).catch(() => {});
+    });
+  }
+  if (dotMax) {
+    dotMax.addEventListener('click', () => {
+      fetch(`${API_BASE}/api/window/control`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'maximize' })
+      }).catch(() => {});
+    });
+  }
+
   // Language Switcher Toggle
   document.getElementById('btn-lang-toggle').addEventListener('click', () => {
     const nextLang = (currentLang === 'en') ? 'ur' : 'en';
@@ -754,6 +903,30 @@ function initActions() {
       showToast(msg);
     }
   });
+
+  // LLM & Developer Max Power Mode
+  const btnLlmMax = document.getElementById('btn-llm-max');
+  if (btnLlmMax) {
+    btnLlmMax.addEventListener('click', async () => {
+      const orig = btnLlmMax.textContent;
+      btnLlmMax.disabled = true;
+      btnLlmMax.style.opacity = '0.7';
+      try {
+        await performPost('/api/boost/llm-max');
+      } finally {
+        btnLlmMax.disabled = false;
+        btnLlmMax.style.opacity = '1';
+        btnLlmMax.textContent = orig;
+      }
+    });
+  }
+
+  const btnRestoreSvc = document.getElementById('btn-restore-services');
+  if (btnRestoreSvc) {
+    btnRestoreSvc.addEventListener('click', async () => {
+      await performPost('/api/boost/restore-services');
+    });
+  }
 
   // Master Hyper Boost
   const btnHyper = document.getElementById('btn-master-boost');
@@ -844,29 +1017,7 @@ function initActions() {
 
   // Storage Scan
   const btnScan = document.getElementById('btn-scan-storage');
-  btnScan.addEventListener('click', async () => {
-    btnScan.textContent = (currentLang === 'ur') ? 'اسکیننگ...' : 'Scanning...';
-    btnScan.disabled = true;
-    try {
-      const res = await fetch(`${API_BASE}/api/storage/scan`);
-      const data = await res.json();
-      if (data && data.totalCleanableMb !== undefined) {
-        document.getElementById('cleanable-total').textContent = `${data.totalCleanableMb} MB`;
-        const tempTotal = ((data.userTempMb || 0) + (data.sysTempMb || 0)).toFixed(1);
-        document.getElementById('cleanable-details').textContent = 
-          `SoftwareDist: ${data.softDistMb || 0}MB • Temp: ${tempTotal}MB • Dumps: ${data.minidumpMb || 0}MB`;
-        const msg = (currentLang === 'ur') ? 
-          `اسکین مکمل: ${data.totalCleanableMb} ایم بی فالتو فائلیں پائی گئیں` : 
-          `Scan Complete: Found ${data.totalCleanableMb} MB cleanable junk`;
-        showToast(msg);
-      }
-    } catch (err) {
-      showToast('Storage scan error: ' + err.message, true);
-    } finally {
-      btnScan.textContent = (currentLang === 'ur') ? 'اسکین کریں' : 'Scan';
-      btnScan.disabled = false;
-    }
-  });
+  btnScan.addEventListener('click', () => scanStorage(false));
 
   // Storage Purge
   document.getElementById('btn-purge-storage').addEventListener('click', async () => {
@@ -893,18 +1044,15 @@ function initActions() {
 
   // Hibernation modes
   document.getElementById('btn-hiber-reduced').addEventListener('click', () => {
-    const msg = (currentLang === 'ur') ? 'ہائبرنیشن ریڈیوسڈ موڈ سیٹ: 4 جی بی خالی' : 'Hibernation set to Reduced (Fast Startup kept, 4GB freed)';
-    performPost('/api/storage/hibernation', { mode: 'reduced' }, msg);
+    performPost('/api/storage/hibernation', { mode: 'reduced' });
   });
 
   document.getElementById('btn-hiber-off').addEventListener('click', () => {
-    const msg = (currentLang === 'ur') ? 'ہائبرنیشن بند کر دی گئی: 8 جی بی مکمل خالی' : 'Hibernation Disabled (8GB SSD space reclaimed)';
-    performPost('/api/storage/hibernation', { mode: 'off' }, msg);
+    performPost('/api/storage/hibernation', { mode: 'off' });
   });
 
   document.getElementById('btn-hiber-full').addEventListener('click', () => {
-    const msg = (currentLang === 'ur') ? 'ہائبرنیشن فل موڈ سیٹ' : 'Hibernation set to Full 100% capacity';
-    performPost('/api/storage/hibernation', { mode: 'full' }, msg);
+    performPost('/api/storage/hibernation', { mode: 'full' });
   });
 
   // Power Plans
@@ -916,6 +1064,7 @@ function initActions() {
 
   function updatePowerButtonStyles(activeKey) {
     Object.keys(powerButtons).forEach(key => {
+      if (!powerButtons[key]) return;
       if (key === activeKey) {
         powerButtons[key].classList.remove('btn-secondary');
         powerButtons[key].classList.add('btn-primary');
@@ -925,20 +1074,21 @@ function initActions() {
       }
     });
   }
+  window.updatePowerButtonStyles = updatePowerButtonStyles;
 
   powerButtons.high.addEventListener('click', async () => {
-    await performPost('/api/power/plan', { plan: 'high' });
-    updatePowerButtonStyles('high');
+    const res = await performPost('/api/power/plan', { plan: 'high' });
+    if (res && res.success !== false) updatePowerButtonStyles('high');
   });
 
   powerButtons.balanced.addEventListener('click', async () => {
-    await performPost('/api/power/plan', { plan: 'balanced' });
-    updatePowerButtonStyles('balanced');
+    const res = await performPost('/api/power/plan', { plan: 'balanced' });
+    if (res && res.success !== false) updatePowerButtonStyles('balanced');
   });
 
   powerButtons.saver.addEventListener('click', async () => {
-    await performPost('/api/power/plan', { plan: 'saver' });
-    updatePowerButtonStyles('saver');
+    const res = await performPost('/api/power/plan', { plan: 'saver' });
+    if (res && res.success !== false) updatePowerButtonStyles('saver');
   });
 
   // Auto-Pilot Checkboxes & Slider
@@ -980,53 +1130,50 @@ function initActions() {
   });
 
     // -----------------------------------------------------------
-    // Desktop Utilities Handlers
+    // Desktop Utilities Handlers (Shared Helper)
     // -----------------------------------------------------------
+    async function runUtilityButton(btn, pendingMsg, endpoint, onSuccess) {
+      if (btn) {
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+      }
+      if (pendingMsg) showToast(pendingMsg);
+      try {
+        const res = await performPost(endpoint);
+        if (res && onSuccess) await onSuccess(res);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }
+      }
+    }
+
     const btnBackup = document.getElementById('btn-run-backup');
     if (btnBackup) {
-      btnBackup.addEventListener('click', async () => {
-        btnBackup.disabled = true;
-        btnBackup.style.opacity = '0.6';
-        showToast('Creating critical backup snapshot...');
-        try {
-          const res = await fetch(`${API_BASE}/api/utilities/backup`, { method: 'POST' });
-          const data = await res.json();
-          showToast(data.message || 'Backup completed!');
+      btnBackup.addEventListener('click', () => {
+        runUtilityButton(btnBackup, 'Creating critical backup snapshot...', '/api/utilities/backup', (data) => {
           const st = document.getElementById('backup-status-text');
           if (st) {
             st.textContent = `${data.filesCount} files (${data.sizeMb} MB) secured`;
-            st.style.color = '#34D399';
+            st.style.color = 'var(--success)';
           }
-        } catch (e) {
-          showToast('Backup failed: ' + e.message, true);
-        } finally {
-          btnBackup.disabled = false;
-          btnBackup.style.opacity = '1';
-        }
+          const hint = document.getElementById('backup-target-hint');
+          if (hint && data.backupPath) hint.textContent = data.backupPath;
+        });
       });
     }
 
     const btnClean = document.getElementById('btn-run-deep-clean');
     if (btnClean) {
-      btnClean.addEventListener('click', async () => {
-        btnClean.disabled = true;
-        btnClean.style.opacity = '0.6';
-        showToast('Purging temp, browser cache & DNS...');
-        try {
-          const res = await fetch(`${API_BASE}/api/utilities/deep-clean`, { method: 'POST' });
-          const data = await res.json();
-          showToast(data.message || 'Cache purged!');
+      btnClean.addEventListener('click', () => {
+        runUtilityButton(btnClean, 'Purging temp, browser cache & DNS...', '/api/utilities/deep-clean', (data) => {
           const last = document.getElementById('cache-last-cleaned');
           if (last) {
             last.textContent = `Cleaned ${data.cleanedMb} MB (${new Date().toLocaleTimeString()})`;
-            last.style.color = '#34D399';
+            last.style.color = 'var(--success)';
           }
-        } catch (e) {
-          showToast('Cache purge error: ' + e.message, true);
-        } finally {
-          btnClean.disabled = false;
-          btnClean.style.opacity = '1';
-        }
+        });
       });
     }
 
@@ -1041,49 +1188,22 @@ function initActions() {
 
     const btnSetupDev = document.getElementById('btn-run-dev-setup');
     if (btnSetupDev) {
-      btnSetupDev.addEventListener('click', async () => {
-        btnSetupDev.disabled = true;
-        btnSetupDev.style.opacity = '0.6';
-        showToast('Configuring developer environment...');
-        try {
-          const res = await fetch(`${API_BASE}/api/utilities/dev-setup`, { method: 'POST' });
-          const data = await res.json();
-          showToast(data.message || 'Dev setup applied!');
-          await fetchDevTools();
-        } catch (e) {
-          showToast('Dev setup error: ' + e.message, true);
-        } finally {
-          btnSetupDev.disabled = false;
-          btnSetupDev.style.opacity = '1';
-        }
+      btnSetupDev.addEventListener('click', () => {
+        runUtilityButton(btnSetupDev, 'Configuring developer environment...', '/api/utilities/dev-setup', () => fetchDevTools());
       });
     }
 
     const btnRestartExp = document.getElementById('btn-run-restart-explorer');
     if (btnRestartExp) {
-      btnRestartExp.addEventListener('click', async () => {
-        showToast('Restarting Windows Explorer...');
-        try {
-          const res = await fetch(`${API_BASE}/api/utilities/restart-explorer`, { method: 'POST' });
-          const data = await res.json();
-          showToast(data.message || 'Explorer restarted!');
-        } catch (e) {
-          showToast('Restart error: ' + e.message, true);
-        }
+      btnRestartExp.addEventListener('click', () => {
+        runUtilityButton(btnRestartExp, 'Restarting Windows Explorer...', '/api/utilities/restart-explorer');
       });
     }
 
     const btnResetNet = document.getElementById('btn-run-reset-network');
     if (btnResetNet) {
-      btnResetNet.addEventListener('click', async () => {
-        showToast('Flushing DNS and repairing Winsock...');
-        try {
-          const res = await fetch(`${API_BASE}/api/utilities/reset-network`, { method: 'POST' });
-          const data = await res.json();
-          showToast(data.message || 'Network refreshed!');
-        } catch (e) {
-          showToast('Network error: ' + e.message, true);
-        }
+      btnResetNet.addEventListener('click', () => {
+        runUtilityButton(btnResetNet, 'Flushing DNS and checking Winsock...', '/api/utilities/reset-network');
       });
     }
   }
@@ -1100,28 +1220,28 @@ function initActions() {
           const el = document.getElementById('dev-git-status');
           if (el) {
             el.textContent = tool.version;
-            el.style.color = tool.installed ? '#34D399' : '#F87171';
+            el.style.color = tool.installed ? 'var(--success)' : 'var(--danger)';
           }
         }
         if (tool.name.includes('Node')) {
           const el = document.getElementById('dev-node-status');
           if (el) {
             el.textContent = tool.version;
-            el.style.color = tool.installed ? '#34D399' : '#F87171';
+            el.style.color = tool.installed ? 'var(--success)' : 'var(--danger)';
           }
         }
         if (tool.name.includes('Python')) {
           const el = document.getElementById('dev-python-status');
           if (el) {
             el.textContent = tool.version;
-            el.style.color = tool.installed ? '#34D399' : 'var(--text-muted)';
+            el.style.color = tool.installed ? 'var(--success)' : 'var(--text-muted)';
           }
         }
         if (tool.name.includes('PowerShell')) {
           const el = document.getElementById('dev-ps-status');
           if (el) {
             el.textContent = tool.version;
-            el.style.color = tool.installed ? '#34D399' : '#FBBF24';
+            el.style.color = tool.installed ? 'var(--success)' : 'var(--warning)';
           }
         }
       });
@@ -1137,15 +1257,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initActions();
   setLanguage(currentLang);
+  loadAutoPilotConfig();
   updateStats();
   fetchLogs();
 
   // Telemetry loop every 2.5 seconds
   setInterval(updateStats, 2500);
 
-  // Initial Storage auto-scan
-  setTimeout(() => {
-    const scanBtn = document.getElementById('btn-scan-storage');
-    if (scanBtn) scanBtn.click();
-  }, 1000);
+  // Silent initial storage scan (no intrusive toast on launch)
+  setTimeout(() => scanStorage(true), 1000);
 });
