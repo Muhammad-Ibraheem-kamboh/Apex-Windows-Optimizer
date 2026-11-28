@@ -279,8 +279,9 @@ const server = http.createServer(async (req, res) => {
         }
 
         // Static Files Serving
-        let filePath = path.join(PUBLIC_DIR, pathname === '/' ? 'index.html' : pathname);
-        if (!fs.existsSync(filePath)) {
+        const reqPath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
+        let filePath = path.resolve(PUBLIC_DIR, reqPath);
+        if (!filePath.startsWith(PUBLIC_DIR) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
             filePath = path.join(PUBLIC_DIR, 'index.html');
         }
 
@@ -291,7 +292,8 @@ const server = http.createServer(async (req, res) => {
             '.css': 'text/css',
             '.json': 'application/json',
             '.svg': 'image/svg+xml',
-            '.png': 'image/png'
+            '.png': 'image/png',
+            '.ico': 'image/x-icon'
         };
 
         const contentType = contentTypes[ext] || 'application/octet-stream';

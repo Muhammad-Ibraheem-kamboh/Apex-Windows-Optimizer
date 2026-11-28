@@ -1,8 +1,8 @@
-# Apex Windows Optimizer Pro ⚡
-
 <p align="center">
-  <img src="assets/preview.png" alt="Apex Windows Optimizer Pro Dashboard" width="850">
+  <img src="assets/apex_banner_1920x1080.png" alt="Apex Windows Optimizer Pro Banner" width="900">
 </p>
+
+# Apex Windows Optimizer Pro ⚡
 
 <p align="center">
   <strong>An ultra-lightweight, zero-dependency Windows performance suite and hardware optimizer.</strong><br>
@@ -38,7 +38,15 @@
 - **🚀 LLM & Developer Boost Mode**: Throttles non-essential background telemetry and suspends resource-heavy virtualization (`vmmemWSL`, Windows Search indexer) to unleash maximum compute and RAM for local AI models, compilers, and IDEs.
 - **🧹 Deep Storage Sweeper & SSD TRIM**: Cleans system temp files, mini-dumps, and Windows update cache, and issues native Windows storage controller `ReTrim` optimization commands.
 - **🎨 Modern Fintech Aesthetic**: Handcrafted humanized interface inspired by the clean, high-contrast **Coinbase iOS design system** with vibrant electric blue accents, stadium pill controls, and zero dark eye-fatigue.
-- **🪶 Featherweight Footprint (Zero `node_modules`)**: 100% dependency-free! Runs purely on native Node.js standard libraries (`http`, `child_process`, `fs`) and native Windows APIs. Entire repo is under **1.5 MB**.
+- **🪶 Featherweight Footprint (Zero `node_modules`)**: 100% dependency-free! Runs purely on native Node.js standard libraries (`http`, `child_process`, `fs`) and native Windows APIs.
+
+---
+
+## 🖥️ Dashboard Preview
+
+<p align="center">
+  <img src="assets/preview.png" alt="Apex Windows Optimizer Pro Dashboard" width="850">
+</p>
 
 ---
 
