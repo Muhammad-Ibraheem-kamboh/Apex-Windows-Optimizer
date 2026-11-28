@@ -3,8 +3,12 @@ $desktop = [System.Environment]::GetFolderPath('Desktop')
 $shortcutPath = Join-Path $desktop "Apex Optimizer.lnk"
 
 $targetVbs = Join-Path $scriptDir "launch.vbs"
-$iconPath = Join-Path $scriptDir "assets\apex.ico"
+$iconPath = Join-Path $scriptDir "assets\apex_optimizer.ico"
 $workDir = $scriptDir
+
+if (Test-Path $shortcutPath) {
+    Remove-Item $shortcutPath -Force -ErrorAction SilentlyContinue
+}
 
 $wsh = New-Object -ComObject WScript.Shell
 $sc = $wsh.CreateShortcut($shortcutPath)
