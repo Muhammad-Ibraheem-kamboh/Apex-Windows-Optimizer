@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="116 98 792 792" width="1024" height="1024" fill="none">
   <defs>
     <!-- Soft outer glow for subtle depth -->
-    <filter id="softGlow" x="-15%" y="-15%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#1E3A8A" flood-opacity="0.32"/>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1E3A8A" flood-opacity="0.28"/>
     </filter>
 
     <!-- Left Wing: Electric Violet to Periwinkle Blue -->

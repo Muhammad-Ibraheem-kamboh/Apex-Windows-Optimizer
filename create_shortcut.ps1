@@ -18,4 +18,18 @@ $sc.Description = "Apex Windows Optimizer Pro - AI Performance Suite"
 $sc.WindowStyle = 1
 $sc.Save()
 
+# Flush Windows Shell icon cache so Desktop shortcut displays updated icon immediately
+Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public class ApexShellRefresh {
+    [DllImport("shell32.dll")]
+    public static extern void SHChangeNotify(int wEventId, int uFlags, IntPtr dwItem1, IntPtr dwItem2);
+}
+"@ -ErrorAction SilentlyContinue
+[ApexShellRefresh]::SHChangeNotify(0x08000000, 0x0000, [IntPtr]::Zero, [IntPtr]::Zero)
+if (Test-Path "$env:WINDIR\System32\ie4uinit.exe") {
+    Start-Process -FilePath "$env:WINDIR\System32\ie4uinit.exe" -ArgumentList "-show" -WindowStyle Hidden -Wait -ErrorAction SilentlyContinue
+}
+
 Write-Output "Shortcut created: $(Test-Path $shortcutPath)"
