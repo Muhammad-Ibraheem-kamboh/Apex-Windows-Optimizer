@@ -1,0 +1,35 @@
+{
+  "name": "apex-windows-optimizer",
+  "version": "1.0.0",
+  "description": "An ultra-lightweight, zero-dependency Windows performance suite, memory optimizer, and system watchdog.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "windows-optimizer",
+    "ram-cleaner",
+    "game-booster",
+    "debloater",
+    "windows-11",
+    "windows-10",
+    "hardware-telemetry",
+    "ssd-trim",
+    "ping-optimizer",
+    "system-guard",
+    "auto-pilot",
+    "zero-dependency",
+    "performance-suite",
+    "dark-mode"
+  ],
+  "author": "Muhammad Ibrahim (Abdaal) <https://github.com/Muhammad-Ibraheem-kamboh>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer/issues"
+  },
+  "homepage": "https://github.com/Muhammad-Ibraheem-kamboh/Apex-Windows-Optimizer#readme"
+}
